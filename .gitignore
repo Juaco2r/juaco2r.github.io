@@ -1,0 +1,26 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Node (por si después usas build tools)
+node_modules/
+dist/
+build/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+*.log
+
+# Large local assets you don't want in git
+# (uncomment if you create local-only folders)
+# temp/
+# local/

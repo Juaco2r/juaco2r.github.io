@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      /* More reddish arterial tone */
+      .main      { fill:none; stroke:#D8757C; stroke-opacity:0.65; stroke-width:14; stroke-linecap:round; stroke-linejoin:round; }
+      .wall      { fill:none; stroke:#F0A6AA; stroke-opacity:0.35; stroke-width:7;  stroke-linecap:round; stroke-linejoin:round; }
+      .branch1   { fill:none; stroke:#D8757C; stroke-opacity:0.55; stroke-width:8;  stroke-linecap:round; stroke-linejoin:round; }
+      .branch2   { fill:none; stroke:#D8757C; stroke-opacity:0.45; stroke-width:5;  stroke-linecap:round; stroke-linejoin:round; }
+      .branch3   { fill:none; stroke:#D8757C; stroke-opacity:0.32; stroke-width:3;  stroke-linecap:round; stroke-linejoin:round; }
+      .twig      { fill:none; stroke:#D8757C; stroke-opacity:0.22; stroke-width:2;  stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+  </defs>
+
+  <!-- MAIN TRUNK -->
+  <path class="main" d="M456,76
+           C424,110 396,140 370,172
+           C340,210 318,254 300,298
+           C282,340 258,392 214,460"></path>
+
+  <!-- Subtle wall highlight -->
+  <path class="wall" d="M448,90
+           C418,122 390,152 364,184
+           C334,222 312,266 294,310
+           C276,352 252,404 210,470"></path>
+
+  <!-- PRIMARY BRANCHES -->
+  <path class="branch1" d="M370,172
+           C340,160 310,156 282,168
+           C248,182 222,206 202,238"></path>
+
+  <path class="branch1" d="M332,236
+           C362,252 388,276 406,308
+           C420,334 430,364 436,394"></path>
+
+  <path class="branch1" d="M300,298
+           C272,292 246,298 220,316
+           C192,336 172,364 158,394"></path>
+
+  <!-- SECONDARY BRANCHES -->
+  <path class="branch2" d="M290,170
+           C272,150 248,138 224,134
+           C200,130 178,138 160,154"></path>
+
+  <path class="branch2" d="M238,240
+           C220,220 200,212 178,212
+           C156,214 138,226 124,246"></path>
+
+  <path class="branch2" d="M406,308
+           C426,302 446,304 466,316
+           C486,328 500,346 506,368"></path>
+
+  <path class="branch2" d="M220,316
+           C198,312 178,314 160,326
+           C138,342 122,362 112,384"></path>
+
+  <!-- TERTIARY BRANCHES -->
+  <path class="branch3" d="M224,134
+           C208,120 190,112 170,112
+           C152,114 136,124 122,140"></path>
+
+  <path class="branch3" d="M178,212
+           C164,204 150,202 136,204
+           C120,208 108,218 98,232"></path>
+
+  <path class="branch3" d="M160,326
+           C142,328 128,336 118,348
+           C108,360 102,374 100,390"></path>
+
+  <path class="branch3" d="M436,394
+           C454,402 468,416 478,436
+           C486,452 490,468 492,486"></path>
+
+  <!-- FINE TWIGS -->
+  <path class="twig" d="M160,154 C146,148 134,148 122,152"></path>
+  <path class="twig" d="M202,238 C192,252 186,266 184,282"></path>
+  <path class="twig" d="M124,246 C110,242 98,242 86,248"></path>
+  <path class="twig" d="M158,394 C146,410 138,426 134,444"></path>
+  <path class="twig" d="M300,298 C316,280 334,268 356,262"></path>
+  <path class="twig" d="M332,236 C346,226 360,220 376,218"></path>
+  <path class="twig" d="M466,316 C480,322 492,334 500,348"></path>
+  <path class="twig" d="M112,384 C100,396 92,408 88,420"></path>
+  <path class="twig" d="M122,140 C110,130 100,124 88,122"></path>
+  <path class="twig" d="M478,436 C488,448 494,460 498,472"></path>
+
+  <!-- Tiny isolated sprouts -->
+  <path class="twig" d="M84,452 C74,446 66,446 58,450"></path>
+  <path class="twig" d="M102,480 C92,474 84,474 76,478"></path>
+  <path class="twig" d="M70,300 C60,294 52,294 44,298"></path>
+</svg>

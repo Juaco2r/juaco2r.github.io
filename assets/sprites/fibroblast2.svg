@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256">
+  
+  <!-- Cell body -->
+  <path d="M48,150
+       C90,130 130,118 170,105
+       C210,92 250,80 290,78
+       C330,76 360,88 392,104
+       C420,118 444,132 466,138
+       C486,144 494,152 490,160
+       C484,170 462,176 440,180
+       C410,186 382,192 350,205
+       C312,220 274,230 230,228
+       C190,226 160,210 138,196
+       C118,184 104,178 86,176
+       C64,174 46,168 40,160
+       C34,152 36,146 48,150 Z" fill="#E7C7B5" stroke="#B88E7C" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path>
+
+  <!-- Subtle highlight ridge -->
+  <path d="M110,150
+       C150,128 190,110 232,98
+       C274,86 310,84 350,96" fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="6" stroke-linecap="round"></path>
+
+  <!-- Nucleus -->
+  <ellipse cx="280" cy="150" rx="60" ry="34" fill="#D6AFA0" stroke="#B88E7C" stroke-opacity="0.35" stroke-width="4"></ellipse>
+
+  <!-- Soft nucleus shading -->
+  <ellipse cx="300" cy="138" rx="18" ry="12" fill="#C79C8C" opacity="0.35"></ellipse>
+
+</svg>

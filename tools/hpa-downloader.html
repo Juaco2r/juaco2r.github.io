@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>HPA Image Downloader | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png" 
+             alt="juaco2r logo" 
+             class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">HPA Image Downloader</h1>
+        <p class="lead">
+          Windows executable that automatically downloads IHC histopathology images from a Human Protein Atlas cancer page,
+          organizes them by gene/antibody/cancer subtype, and generates CSV summaries.
+        </p>
+
+        <div class="tool-meta">
+          <span class="tag">Windows</span>
+          <span class="tag">Human Protein Atlas</span>
+          <span class="tag">IHC</span>
+          <span class="tag">CSV summaries</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#" title="Add your GitHub repo link here">Repository</a>
+          <a class="btn" href="#" title="Optional: link to releases">Download</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Requirements</h2>
+          <ul class="small">
+            <li>Windows computer</li>
+            <li>Internet connection</li>
+            <li><code>ImageDownloaderHPA.exe</code> stored in an accessible folder</li>
+          </ul>
+          :contentReference[oaicite:9]{index=9}
+          <hr class="sep"/>
+          <h2>Output location</h2>
+          <p class="small">
+            Everything is saved under your user <b>Downloads</b> folder, inside <code>HPA Images</code>. :contentReference[oaicite:10]{index=10}
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>How to get the correct URL</h2>
+          <ol class="small">
+            <li>Open Human Protein Atlas in your browser.</li>
+            <li>Navigate to the target gene/cancer page.</li>
+            <li>Make sure you are on the cancer tab where the <b>image thumbnails</b> are visible.</li>
+            <li>Copy the full URL from the address bar.</li>
+          </ol>
+          <p class="small">
+            Tip: If the tool says it cannot find antibody IDs, the URL is usually not pointing to the correct thumbnail section. :contentReference[oaicite:11]{index=11}
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Run the executable</h2>
+          <ol class="small">
+            <li>Double click <code>ImageDownloaderHPA.exe</code>.</li>
+            <li>Paste the URL in the console (right click → paste or Ctrl+V).</li>
+            <li>Press Enter, then select <b>1</b> for <code>.jpg</code> or <b>2</b> for <code>.tif</code>.</li>
+            <li>Wait until it finishes; it will report the output folder and ask you to press Enter to exit.</li>
+          </ol>
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Folder structure</h2>
+          <p class="small">Downloads → <code>HPA Images</code> → <code>&lt;GENE&gt;</code> → <code>&lt;ANTIBODY_ID&gt;</code> → <code>&lt;CancerSubtype&gt;</code></p>
+          <ul class="small">
+            <li>Images renamed as <code>ID_&lt;PatientID&gt;_&lt;n&gt;.jpg/.tif</code></li>
+            <li>One CSV per cancer subtype folder</li>
+            <li>One “global” CSV at antibody root</li>
+            <li>One “global” CSV at gene root (all antibodies)</li>
+          </ul>
+          
+        </div>
+
+        <div class="card">
+          <h2>CSV fields (high level)</h2>
+          <p class="small">Each row corresponds to one image and includes (among others):</p>
+          <ul class="small">
+            <li>Gene, AntibodyID, CancerFolder</li>
+            <li>ImageName, ImageLink</li>
+            <li>PatientID, Gender, Age</li>
+            <li>CancerType, CancerCode</li>
+            <li>LocationCodes (tissue codes)</li>
+          </ul>
+          
+        </div>
+
+        <div class="card">
+          <h2>Resolution + format note</h2>
+          <p class="small">
+            Image resolution is <b>0.5 μm/pixel</b> (same for JPG and TIFF). JPG files are compressed (smaller size),
+            but compression can slightly affect intensities. :contentReference[oaicite:15]{index=15}
+          </p>
+          <hr class="sep"/>
+          <h2>Common errors</h2>
+          <ul class="small">
+            <li><b>No antibody IDs found</b>: verify the URL points to the cancer/IHC thumbnail section.</li>
+            <li><b>No new folders in Downloads</b>: check internet connection and URL correctness, and whether <code>HPA Images</code> already exists.</li>
+          </ul>
+          :contentReference[oaicite:16]{index=16}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Screenshots</h2>
+        <p class="small">
+          Add images to <code>/assets/images/tools/hpa-downloader/</code> (e.g., <code>console.png</code>, <code>folder-tree.png</code>, <code>csv-example.png</code>).
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
+      </div>
+  
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>

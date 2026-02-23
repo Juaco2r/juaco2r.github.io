@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Tools | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png" 
+             alt="juaco2r logo" 
+             class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Page Header -->
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">Tools</h1>
+        <p class="lead">
+          A collection of software tools designed to support scalable digital pathology workflows,
+          from whole-slide image processing to dataset preparation and quantitative analysis.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section class="section">
+      <div class="grid">
+
+        <!-- TiffCropper -->
+        <div class="card tool-card">
+          <h2>TiffCropper</h2>
+          <p class="small">
+            Standalone Windows application for extracting high-resolution ROIs from large TIFF microscopy images,
+            preserving calibration metadata and spatial integrity.
+          </p>
+
+          <ul class="small">
+            <li>Handles large TIFF / WSI-like images</li>
+            <li>Metadata-safe cropping</li>
+            <li>Designed for reproducible ROI workflows</li>
+          </ul>
+
+          <div class="tool-meta">
+            <span class="tag">Windows</span>
+            <span class="tag">TIFF</span>
+            <span class="tag">ROI</span>
+          </div>
+
+          <hr class="sep"/>
+
+          <div class="actions">
+            <a class="btn" href="/tools/tiffcropper.html">Documentation</a>
+            <a class="btn" href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </div>
+
+
+        <!-- HistRegGUI -->
+        <div class="card tool-card">
+          <h2>HistRegGUI</h2>
+          <p class="small">
+            Desktop GUI for histology image registration using DeeperHistReg presets
+            (initial, rigid, nonrigid) with CPU-only execution support.
+          </p>
+
+          <ul class="small">
+            <li>Multi-stage registration pipeline</li>
+            <li>CPU-friendly execution</li>
+            <li>Designed for section alignment & 3D reconstruction workflows</li>
+          </ul>
+
+          <div class="tool-meta">
+            <span class="tag">Registration</span>
+            <span class="tag">DeeperHistReg</span>
+            <span class="tag">GUI</span>
+          </div>
+
+          <hr class="sep"/>
+
+          <div class="actions">
+            <a class="btn" href="/tools/histreggui.html">Documentation</a>
+            <a class="btn" href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </div>
+
+
+        <!-- HPA Downloader -->
+        <div class="card tool-card">
+          <h2>HPA Image Downloader</h2>
+          <p class="small">
+            Automated downloader for IHC cancer images from the Human Protein Atlas,
+            generating structured folders and CSV metadata summaries for dataset construction.
+          </p>
+
+          <ul class="small">
+            <li>Batch IHC image retrieval</li>
+            <li>Structured dataset organization</li>
+            <li>CSV metadata export</li>
+          </ul>
+
+          <div class="tool-meta">
+            <span class="tag">IHC</span>
+            <span class="tag">Dataset</span>
+            <span class="tag">CSV</span>
+          </div>
+
+          <hr class="sep"/>
+
+          <div class="actions">
+            <a class="btn" href="/tools/hpa-downloader.html">Documentation</a>
+            <a class="btn" href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Pipeline Section -->
+    <section class="section">
+      <div class="card">
+        <h2>Pipeline Development</h2>
+        <p class="small">
+          Beyond standalone tools, current development focuses on an end-to-end WSI processing
+          pipeline that transforms raw whole-slide images into structured, analysis-ready datasets.
+        </p>
+        <p class="small">
+          The system integrates automated tissue detection, artifact cleaning,
+          efficient patch extraction and storage, and segmentation modules
+          for quantitative tumor microenvironment (TME) characterization.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
+      </div>
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <span class="footer-dot">·</span>
+        <a href="/terms/">Terms</a>
+        <span class="footer-dot">·</span>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

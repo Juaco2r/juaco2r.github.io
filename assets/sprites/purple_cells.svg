@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .outer { fill:#9A86C8; fill-opacity:0.85; }
+      .core  { fill:#6F5AA8; fill-opacity:0.85; }
+      .light { fill:#FFFFFF; fill-opacity:0.25; }
+    </style>
+  </defs>
+
+  <!-- Cell 1 -->
+  <circle class="outer" cx="120" cy="140" r="42"></circle>
+  <circle class="core" cx="120" cy="140" r="22"></circle>
+  <ellipse class="light" cx="108" cy="126" rx="12" ry="8"></ellipse>
+
+  <!-- Cell 2 -->
+  <circle class="outer" cx="240" cy="110" r="36"></circle>
+  <circle class="core" cx="240" cy="110" r="18"></circle>
+  <ellipse class="light" cx="228" cy="98" rx="10" ry="6"></ellipse>
+
+  <!-- Cell 3 -->
+  <circle class="outer" cx="360" cy="170" r="48"></circle>
+  <circle class="core" cx="360" cy="170" r="26"></circle>
+  <ellipse class="light" cx="346" cy="154" rx="14" ry="9"></ellipse>
+
+  <!-- Cell 4 -->
+  <circle class="outer" cx="170" cy="280" r="30"></circle>
+  <circle class="core" cx="170" cy="280" r="14"></circle>
+  <ellipse class="light" cx="160" cy="268" rx="8" ry="5"></ellipse>
+
+  <!-- Cell 5 -->
+  <circle class="outer" cx="320" cy="320" r="40"></circle>
+  <circle class="core" cx="320" cy="320" r="20"></circle>
+  <ellipse class="light" cx="306" cy="306" rx="11" ry="7"></ellipse>
+
+  <!-- Cell 6 -->
+  <circle class="outer" cx="420" cy="360" r="28"></circle>
+  <circle class="core" cx="420" cy="360" r="12"></circle>
+  <ellipse class="light" cx="410" cy="350" rx="7" ry="4"></ellipse>
+
+</svg>

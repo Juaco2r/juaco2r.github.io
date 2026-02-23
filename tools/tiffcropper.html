@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>TiffCropper | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png" 
+             alt="juaco2r logo" 
+             class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">TiffCropper</h1>
+        <p class="lead">Standalone Windows application to extract high-resolution ROIs from large TIFF microscopy images while preserving calibration metadata.</p>
+
+        <div class="tool-meta">
+          <span class="tag">Windows 10/11</span>
+          <span class="tag">TIFF/WSI</span>
+          <span class="tag">ROI</span>
+          <span class="tag">No Python required</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#" title="Add your GitHub repo link here">Repository</a>
+          <a class="btn" href="/downloads/" title="Optional: link to releases">Download</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Overview</h2>
+          <p class="small">
+            Designed for digital histopathology researchers who need precise crops from large TIFF files,
+            keeping calibration metadata (resolution, physical size) intact.
+          </p>
+          <hr class="sep"/>
+          <h2>Key features</h2>
+          <ul class="small">
+            <li>Browse any .tif/.tiff file</li>
+            <li>Coordinate-based ROI input (X, Y, Width, Height)</li>
+            <li>Custom suffix for output naming</li>
+            <li>Portable executable (no installation)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Quick start</h2>
+          <ol class="small">
+            <li>Click <b>Browse TIFF</b> and select a .tif/.tiff file.</li>
+            <li>Enter ROI coordinates: X, Y, Width, Height.</li>
+            <li>Set a suffix (optional) and click <b>CROP &amp; SAVE</b>.</li>
+          </ol>
+          <p class="small">Output is saved in the same folder as the original file, using: <code>{original}_crop_{suffix}.tif</code></p>
+        </div>
+
+        <div class="card">
+          <h2>Coordinate system</h2>
+          <p class="small">
+            The image is treated as a matrix: <b>X</b> is the column index (left→right), <b>Y</b> is the row index (top→bottom).
+            Width/Height define the ROI size in pixels.
+          </p>
+          <hr class="sep"/>
+          <h2>Troubleshooting</h2>
+          <ul class="small">
+            <li><b>No file selected</b>: ensure the TIFF is not open in ImageJ/Fiji.</li>
+            <li><b>Cannot read dimensions</b>: verify the file is a valid TIFF.</li>
+            <li><b>Access denied</b>: run as Administrator or move the source to a writable folder.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Screenshots</h2>
+        <p class="small">Place your images here:</p>
+        <p class="small"><code>/assets/images/tools/tiffcropper/</code> (e.g., <code>cover.png</code>, <code>demo.png</code>)</p>
+        <!-- Example:
+        <img src="/assets/images/tools/tiffcropper/cover.png" style="width:100%; border-radius:14px; border:1px solid var(--line);" alt="TiffCropper UI"/>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
+      </div>
+  
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>

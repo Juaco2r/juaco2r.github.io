@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Juaco2r | Digital Pathology Tools</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png" 
+             alt="juaco2r logo" 
+             class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card">
+            <h1 class="h1">Digital Pathology tools<br/>for research workflows</h1>
+            <p class="lead">
+                Advances in cancer research increasingly depend on quantitative histology and computational analysis.
+                From whole-slide imaging to spatial tissue modeling, robust digital workflows are essential.
+                I develop practical tools that bridge image processing and AI-driven infrastructure for
+                reproducible biomedical research.
+            </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="/tools/">Explore tools</a>
+            <a class="btn" href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+
+          <div class="badges">
+            <span class="badge">WSI / TIFF</span>
+            <span class="badge">Registration</span>
+            <span class="badge">Image processing</span>
+            <span class="badge">AI-ready</span>
+          </div>
+        </div>
+
+        <div class="card" style="padding:0; overflow:hidden;">
+          <div style="padding:14px 16px; border-bottom:1px solid var(--line);">
+            <div style="font-weight:650;">Histology lung cancer animation</div>
+            <div class="small">Abstract animation inspired by lung cancer histology</div>
+          </div>
+          <div style="height:360px;">
+            <canvas id="histoCanvas" style="width:100%; height:100%; display:block;"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Featured tools</h2>
+      <div class="grid">
+        <div class="card tool-card">
+          <h3>TiffCropper</h3>
+          <p>Standalone Windows app to extract high-resolution ROIs from large TIFF microscopy images while preserving calibration metadata.</p>
+          <div class="tool-meta">
+            <span class="tag">Windows</span><span class="tag">TIFF</span><span class="tag">ROI</span>
+          </div>
+          <hr class="sep"/>
+          <a class="btn" href="/tools/tiffcropper.html">Open page</a>
+        </div>
+
+        <div class="card tool-card">
+          <h3>HistRegGUI</h3>
+          <p>Desktop GUI for histology image registration using DeeperHistReg presets (initial, rigid, nonrigid) with CPU-only execution.</p>
+          <div class="tool-meta">
+            <span class="tag">Registration</span><span class="tag">DeeperHistReg</span><span class="tag">GUI</span>
+          </div>
+          <hr class="sep"/>
+          <a class="btn" href="/tools/histreggui.html">Open page</a>
+        </div>
+
+        <div class="card tool-card">
+          <h3>HPA Image Downloader</h3>
+          <p>Automates downloading IHC cancer images from Human Protein Atlas and generates structured folders + CSV metadata summaries.</p>
+          <div class="tool-meta">
+            <span class="tag">IHC</span><span class="tag">Dataset</span><span class="tag">CSV</span>
+          </div>
+          <hr class="sep"/>
+          <a class="btn" href="/tools/hpa-downloader.html">Open page</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>What I’m building next</h2>
+        <p class="lead" style="margin-bottom:0;">
+        Currently developing a robust end-to-end pipeline that transforms whole-slide images (WSI)
+        into structured, analysis-ready data. The workflow includes automated tissue detection,
+        artifact removal, efficient patch extraction and storage, and segmentation modules designed
+        for quantitative characterization of the tumor microenvironment (TME).
+        The goal is to enable scalable, reproducible analysis from raw histology to biological insight.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
+      </div>
+  
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+  <script src="/assets/js/main.js"></script>
+  </body>
+  </html>

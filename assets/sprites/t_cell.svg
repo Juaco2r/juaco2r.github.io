@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+
+  <defs>
+    <style>
+      .membrane {
+        fill:#BFE4E3;
+        stroke:#3FA7A3;
+        stroke-width:5;
+      }
+      .nucleus {
+        fill:#8FC5C3;
+        opacity:0.9;
+      }
+      .highlight {
+        fill:#FFFFFF;
+        opacity:0.25;
+      }
+    </style>
+  </defs>
+
+  <!-- Cell membrane -->
+  <circle class="membrane" cx="128" cy="128" r="90"></circle>
+
+  <!-- Nucleus -->
+  <circle class="nucleus" cx="128" cy="128" r="52"></circle>
+
+  <!-- Soft highlight -->
+  <ellipse class="highlight" cx="110" cy="108" rx="28" ry="18"></ellipse>
+
+</svg>

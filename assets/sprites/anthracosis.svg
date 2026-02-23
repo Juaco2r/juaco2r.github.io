@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      /* charcoal palette */
+      .s1 { fill:#1A1A1A; fill-opacity:0.55; }
+      .s2 { fill:#0F0F0F; fill-opacity:0.35; }
+      .s3 { fill:#2A2A2A; fill-opacity:0.28; }
+      .h  { fill:#FFFFFF; fill-opacity:0.06; }
+    </style>
+  </defs>
+
+  <!-- soft irregular soot patches -->
+  <path class="s2" d="M120,310
+           C90,290 92,250 122,236
+           C156,220 190,238 202,268
+           C214,296 196,330 164,340
+           C144,346 132,336 120,310 Z"></path>
+  <path class="s3" d="M340,180
+           C318,164 322,136 346,126
+           C374,114 406,130 414,156
+           C422,184 402,208 376,212
+           C360,214 352,202 340,180 Z"></path>
+  <path class="s3" d="M310,360
+           C294,346 298,322 318,314
+           C342,306 366,320 372,342
+           C378,368 360,388 338,390
+           C326,392 320,382 310,360 Z"></path>
+
+  <!-- dense granular clusters (anthracotic pigment granules) -->
+  <g>
+    <!-- cluster A -->
+    <circle class="s1" cx="150" cy="280" r="10"></circle>
+    <circle class="s1" cx="165" cy="292" r="6"></circle>
+    <circle class="s2" cx="138" cy="292" r="5"></circle>
+    <circle class="s1" cx="178" cy="276" r="4"></circle>
+    <circle class="s2" cx="156" cy="265" r="5"></circle>
+    <circle class="s3" cx="168" cy="262" r="3.5"></circle>
+    <circle class="s3" cx="140" cy="272" r="3.2"></circle>
+    <circle class="s2" cx="184" cy="296" r="3.5"></circle>
+    <circle class="s3" cx="152" cy="304" r="3.2"></circle>
+
+    <!-- cluster B -->
+    <circle class="s1" cx="360" cy="160" r="9"></circle>
+    <circle class="s2" cx="378" cy="168" r="6"></circle>
+    <circle class="s1" cx="346" cy="170" r="5"></circle>
+    <circle class="s3" cx="392" cy="154" r="4"></circle>
+    <circle class="s2" cx="366" cy="146" r="4.5"></circle>
+    <circle class="s3" cx="350" cy="154" r="3.4"></circle>
+    <circle class="s2" cx="382" cy="142" r="3.6"></circle>
+    <circle class="s3" cx="372" cy="182" r="3.2"></circle>
+
+    <!-- cluster C -->
+    <circle class="s1" cx="330" cy="342" r="8"></circle>
+    <circle class="s2" cx="346" cy="352" r="5.5"></circle>
+    <circle class="s1" cx="316" cy="352" r="4.8"></circle>
+    <circle class="s3" cx="356" cy="336" r="3.8"></circle>
+    <circle class="s2" cx="334" cy="330" r="4.2"></circle>
+    <circle class="s3" cx="320" cy="336" r="3.2"></circle>
+    <circle class="s2" cx="346" cy="326" r="3.2"></circle>
+    <circle class="s3" cx="336" cy="366" r="3.1"></circle>
+  </g>
+
+  <!-- scattered micro-specks -->
+  <g>
+    <circle class="s2" cx="80" cy="240" r="2.2"></circle>
+    <circle class="s3" cx="98" cy="256" r="1.9"></circle>
+    <circle class="s2" cx="112" cy="220" r="1.7"></circle>
+    <circle class="s3" cx="210" cy="210" r="2.0"></circle>
+    <circle class="s2" cx="236" cy="242" r="1.6"></circle>
+    <circle class="s3" cx="260" cy="210" r="1.8"></circle>
+    <circle class="s2" cx="430" cy="210" r="2.1"></circle>
+    <circle class="s3" cx="452" cy="190" r="1.8"></circle>
+    <circle class="s2" cx="440" cy="240" r="1.7"></circle>
+    <circle class="s3" cx="250" cy="430" r="2.0"></circle>
+    <circle class="s2" cx="230" cy="452" r="1.6"></circle>
+    <circle class="s3" cx="280" cy="456" r="1.8"></circle>
+  </g>
+
+  <!-- tiny highlights (very subtle, makes it feel embedded not flat) -->
+  <g>
+    <ellipse class="h" cx="156" cy="272" rx="6" ry="3.5"></ellipse>
+    <ellipse class="h" cx="368" cy="152" rx="5.5" ry="3.2"></ellipse>
+    <ellipse class="h" cx="334" cy="336" rx="5.5" ry="3.2"></ellipse>
+  </g>
+</svg>

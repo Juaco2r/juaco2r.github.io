@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>About | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png" 
+             alt="juaco2r logo" 
+             class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">About</h1>
+        <p class="lead">
+          I’m José Joaquín Rodríguez Rojas — an engineer specialized in <b>Medical Image Computing</b>,
+          focused on building <b>robust digital pathology pipelines</b> and <b>AI-ready tooling</b> for biomedical research.
+        </p>
+        <div class="badges">
+          <span class="badge">Digital Pathology</span>
+          <span class="badge">Medical imaging</span>
+          <span class="badge">Image processing</span>
+          <span class="badge">AI-ready pipelines</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>What I do</h2>
+          <p class="small">
+            I build practical software that turns microscopy and medical images into analysis-ready data —
+            including registration, segmentation, dataset preparation, and quality control — with an emphasis
+            on reproducibility, scalability, and usability.
+          </p>
+          <hr class="sep"/>
+          <h2>Current focus</h2>
+          <ul class="small">
+            <li>End-to-end WSI pipelines: tissue detection, cleaning, efficient patch extraction &amp; storage</li>
+            <li>Segmentation modules for quantitative analysis and TME characterization</li>
+            <li>WSI registration for 3D tissue reconstruction and multi-section alignment</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Background</h2>
+          <ul class="small">
+            <li>Research internship: 3D tissue morphology reconstruction via WSI registration</li>
+            <li>Medical device R&amp;D (Electrophysiology, Interventional Cardiology)</li>
+            <li>Design assurance, risk management, and medical device standards</li>
+          </ul>
+          <p class="small">
+            This mix helps me bridge research needs with real-world constraints in clinical and regulated environments.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Tech stack</h2>
+          <ul class="small">
+            <li><b>Python</b>: PyTorch, OpenCV, SimpleITK</li>
+            <li><b>Data</b>: SQL</li>
+            <li><b>Dev</b>: Git/GitHub</li>
+            <li><b>Other</b>: MATLAB, CAD tools</li>
+          </ul>
+          <hr class="sep"/>
+          <h2>Languages</h2>
+          <p class="small">Spanish (native) · English (C1) · Italian (beginner)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Links</h2>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="/tools/">Tools</a>
+          <!-- Optional:
+          <a class="btn" href="/downloads/papers/your_cv.pdf">CV (PDF)</a>
+          <a class="btn" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">LinkedIn</a>
+          -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
+      </div>
+  
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>

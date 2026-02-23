@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Research | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png" 
+             alt="juaco2r logo" 
+             class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Intro -->
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">Research</h1>
+        <p class="lead">
+          My work focuses on computational methods for medical imaging and digital pathology,
+          building reproducible pipelines that bridge classical image processing and AI-ready systems.
+        </p>
+
+        <div class="badges">
+          <span class="badge">Digital Pathology</span>
+          <span class="badge">WSI Registration</span>
+          <span class="badge">3D Reconstruction</span>
+          <span class="badge">Segmentation</span>
+          <span class="badge">Medical Image Computing</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Lines -->
+    <section class="section">
+      <div class="grid">
+
+        <div class="card">
+          <h2>Digital Pathology & WSI Registration</h2>
+          <p class="small">
+            Development of registration pipelines for whole slide images (WSI),
+            enabling alignment of serial histology sections for volumetric tissue reconstruction.
+          </p>
+          <ul class="small">
+            <li>Multi-resolution alignment strategies</li>
+            <li>Rigid and nonrigid registration</li>
+            <li>Integration with segmentation workflows</li>
+            <li>Preparation for 3D rendering pipelines</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Medical Image Computing</h2>
+          <ul class="small">
+            <li>Brain image registration and segmentation</li>
+            <li>Skin lesion classification using ML/DL</li>
+            <li>Lung MRI inhalation/exhalation registration</li>
+          </ul>
+          <p class="small">
+            Focus on clinically meaningful validation and reproducibility.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Computer Vision for Angiography</h2>
+          <p class="small">
+            Instance segmentation for coronary artery disease angiography using
+            classical image processing and machine learning approaches,
+            compared with deep learning techniques.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Philosophy / Roadmap -->
+    <section class="section">
+      <div class="card">
+        <h2>Research Vision</h2>
+        <p class="small">
+          I aim to build computational infrastructures that allow scalable digital pathology analysis,
+          where classical image processing ensures robustness and AI modules enhance feature extraction,
+          segmentation, and predictive modeling.
+        </p>
+        <p class="small">
+          The long-term objective is to contribute to clinically meaningful,
+          AI-assisted diagnostic workflows.
+        </p>
+      </div>
+    </section>
+
+    <!-- Publications Placeholder -->
+    <section class="section">
+      <div class="card">
+        <h2>Publications & Posters</h2>
+        <p class="small">
+          This section will include peer-reviewed publications, conference posters,
+          and technical reports related to digital pathology and medical imaging.
+        </p>
+
+        <!-- Example link -->
+        <!--
+        <div class="actions">
+          <a class="btn btn-primary" href="/downloads/papers/paper_name.pdf">Paper title</a>
+        </div>
+        -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
+      </div>
+  
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>

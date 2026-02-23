@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 140">
+  <defs>
+    <style>
+      /* base ribbon fill */
+      .fill { fill:none; stroke:#CDA79A; stroke-opacity:0.18; stroke-width:22; stroke-linecap:round; stroke-linejoin:round; }
+      /* darker edge */
+      .edgeD { fill:none; stroke:#B88E7C; stroke-opacity:0.28; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }
+      /* lighter edge */
+      .edgeL { fill:none; stroke:#E6CDC4; stroke-opacity:0.22; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+      /* tiny core accent (optional) */
+      .core { fill:none; stroke:#B88E7C; stroke-opacity:0.10; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+  </defs>
+
+  <!-- One long wavy backbone -->
+  <path id="p" d="M-10,92
+       C 90,88 150,78 220,66
+       C 300,52 340,52 410,66
+       C 490,82 540,88 610,74
+       C 700,56 760,44 860,52
+       C 940,58 990,54 1034,38"></path>
+
+  <!-- Ribbon fill -->
+  <use href="#p" class="fill"></use>
+
+  <!-- Two edges, slightly offset by duplicating similar curves -->
+  <path class="edgeD" d="M-12,96
+       C 88,92 148,82 218,70
+       C 298,56 340,56 412,70
+       C 492,86 542,92 612,78
+       C 702,60 762,48 862,56
+       C 944,62 994,58 1036,42"></path>
+
+  <path class="edgeL" d="M-8,88
+       C 92,84 152,74 222,62
+       C 302,48 342,48 408,62
+       C 488,78 538,84 608,70
+       C 698,52 758,40 858,48
+       C 936,54 986,50 1032,34"></path>
+
+  <!-- Subtle inner accent -->
+  <use href="#p" class="core"></use>
+
+</svg>
