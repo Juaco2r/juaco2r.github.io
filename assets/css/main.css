@@ -342,3 +342,62 @@
     display:flex;
   }
 }
+
+/* Brand icon */
+.brand-icon{
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+/* Mobile nav toggle button */
+.nav-toggle{
+  display:none;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+@media (max-width: 820px){
+  .nav-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* hide links by default on mobile */
+  .nav-links{
+    display:none;
+    position:absolute;
+    top: 64px; /* same as nav height */
+    left: 18px;
+    right: 18px;
+
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+
+    border-radius: 16px;
+    background: rgba(11,15,25,0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  }
+
+  .nav-links a{
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.04);
+    color: var(--text);
+  }
+
+  .nav-links.is-open{
+    display:flex;
+  }
+}

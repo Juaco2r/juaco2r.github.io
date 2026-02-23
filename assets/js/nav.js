@@ -1,6 +1,6 @@
 (function () {
     const btn = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav-links");
+    const nav = document.querySelector("#primary-nav");
   
     if (!btn || !nav) return;
   
@@ -11,11 +11,10 @@
     }
   
     btn.addEventListener("click", () => {
-      const isOpen = nav.classList.contains("is-open");
-      setOpen(!isOpen);
+      setOpen(!nav.classList.contains("is-open"));
     });
   
-    // Close menu when clicking a link (mobile UX)
+    // Close when clicking a link (mobile UX)
     nav.addEventListener("click", (e) => {
       if (e.target && e.target.tagName === "A") setOpen(false);
     });
