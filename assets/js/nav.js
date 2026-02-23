@@ -1,4 +1,4 @@
-(function () {
+document.addEventListener("DOMContentLoaded", () => {
     const btn = document.querySelector(".nav-toggle");
     const nav = document.querySelector("#primary-nav");
   
@@ -14,20 +14,17 @@
       setOpen(!nav.classList.contains("is-open"));
     });
   
-    // Close when clicking a link (mobile UX)
     nav.addEventListener("click", (e) => {
       if (e.target && e.target.tagName === "A") setOpen(false);
     });
   
-    // Close when clicking outside
     document.addEventListener("click", (e) => {
       if (!nav.classList.contains("is-open")) return;
       const clickedInside = nav.contains(e.target) || btn.contains(e.target);
       if (!clickedInside) setOpen(false);
     });
   
-    // Close on Escape
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") setOpen(false);
     });
-  })();
+  });
