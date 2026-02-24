@@ -17,12 +17,12 @@
              class="brand-icon"/>
         <span>Juaco2r</span>
       </a>
-  
+
       <!-- MOBILE MENU BUTTON -->
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
         ☰
       </button>
-  
+
       <nav id="primary-nav" class="nav-links" aria-label="Primary">
         <a href="/tools/">Tools</a>
         <a href="/research/">Research</a>
@@ -55,10 +55,11 @@
 
     <!-- Research Lines -->
     <section class="section">
+      <h2>Research lines</h2>
       <div class="grid">
 
         <div class="card">
-          <h2>Digital Pathology & WSI Registration</h2>
+          <h2>Digital Pathology &amp; WSI Registration</h2>
           <p class="small">
             Development of registration pipelines for whole slide images (WSI),
             enabling alignment of serial histology sections for volumetric tissue reconstruction.
@@ -98,7 +99,7 @@
     <!-- Philosophy / Roadmap -->
     <section class="section">
       <div class="card">
-        <h2>Research Vision</h2>
+        <h2>Research vision</h2>
         <p class="small">
           I aim to build computational infrastructures that allow scalable digital pathology analysis,
           where classical image processing ensures robustness and AI modules enhance feature extraction,
@@ -114,18 +115,78 @@
     <!-- Publications Placeholder -->
     <section class="section">
       <div class="card">
-        <h2>Publications & Posters</h2>
+        <h2>Publications &amp; posters</h2>
         <p class="small">
           This section will include peer-reviewed publications, conference posters,
           and technical reports related to digital pathology and medical imaging.
         </p>
 
-        <!-- Example link -->
-        <!--
+        <!-- Example:
         <div class="actions">
           <a class="btn btn-primary" href="/downloads/papers/paper_name.pdf">Paper title</a>
+          <a class="btn" href="/downloads/posters/poster_name.pdf">Poster title</a>
         </div>
         -->
+      </div>
+    </section>
+
+    <!-- Tutorials (YouTube playlist embed) -->
+    <section class="section">
+      <div class="card">
+        <h2>Tutorials</h2>
+        <p class="small">
+          Practical digital pathology tutorials (e.g., QuPath workflows), image analysis habits,
+          and reproducible research tooling. New videos will appear automatically as I publish them.
+        </p>
+
+        <div class="actions" style="margin-bottom:16px;">
+          <a class="btn btn-primary"
+             href="https://www.youtube.com/channel/UC9rRT6UXbC-J0PYJHMb1TVQ"
+             target="_blank" rel="noreferrer">
+            Visit YouTube channel
+          </a>
+        </div>
+
+        <div style="border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(255,255,255,0.03);">
+          <div style="position:relative; width:100%; padding-top:56.25%;">
+            <iframe
+              style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+              src="https://www.youtube.com/embed/videoseries?list=PLAYLIST_ID"
+              title="Digital Pathology Tutorials Playlist"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <p class="small" style="margin-top:10px;">
+          Tip: Replace <code>PLAYLIST_ID</code> with your YouTube playlist ID (the value after <code>list=</code>).
+        </p>
+      </div>
+    </section>
+
+    <!-- Clinical presentation (PDF viewer) -->
+    <section class="section">
+      <div class="card">
+        <h2>Clinical training presentation</h2>
+        <p class="small">
+          View-only presentation with clinical background and context.
+        </p>
+
+        <hr class="sep"/>
+
+        <iframe
+          src="/presentation/viewer.html"
+          style="width:100%; height:75vh; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,0.03);"
+          loading="lazy"
+          title="Clinical training presentation">
+        </iframe>
+
+        <p class="small" style="margin-top:10px;">
+          For viewing purposes only.
+        </p>
       </div>
     </section>
 
@@ -136,7 +197,7 @@
       <div class="footer-left">
         © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
       </div>
-  
+
       <div class="footer-right">
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
@@ -144,7 +205,7 @@
       </div>
     </div>
   </footer>
-  
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>

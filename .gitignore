@@ -24,3 +24,7 @@ venv/
 # (uncomment if you create local-only folders)
 # temp/
 # local/
+
+echo "*.pptx" >> .gitignore
+git add .gitignore
+git commit -m "Ignore PPTX files"
