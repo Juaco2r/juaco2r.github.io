@@ -401,3 +401,31 @@
     display:flex;
   }
 }
+
+/* Tool conceptual illustration inside cards */
+.tool-illus{
+  width: 100%;
+  height: 150px;                 /* adjust: 130–180 works well */
+  margin: 10px 0 12px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.tool-illus img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* keeps entire image visible */
+  object-position: center;
+  display:block;
+  padding: 10px;                 /* avoids touching borders */
+}
+
+/* Optional: slightly taller on larger screens */
+@media (min-width: 900px){
+  .tool-illus{ height: 165px; }
+}
