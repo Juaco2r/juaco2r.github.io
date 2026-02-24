@@ -68,6 +68,20 @@
       max-width: 780px;
     }
     .error-box code{ color: var(--muted); }
+
+    /* --- EMBED MODE (inside iframe) --- */
+    body.embed { margin: 0; }
+    body.embed main.container { max-width: none !important; padding: 0 !important; }
+    body.embed .section { padding: 0 !important; }
+    body.embed .card{
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+    }
+    body.embed h1, body.embed p.small { display: none !important; }
+    body.embed .pdf-wrap{ border-radius: 14px; } /* para que encaje con tu iframe */
   </style>
 </head>
 <body>
@@ -102,6 +116,12 @@
 </main>
 
 <!-- ✅ ONE script only: local PDF.js module -->
+<script>
+  // enable embed mode if URL contains ?embed=1
+  if (new URLSearchParams(location.search).get("embed") === "1") {
+    document.body.classList.add("embed");
+  }
+</script>
 <script type="module">
   import * as pdfjsLib from "/assets/vendor/pdfjs/pdf.min.mjs";
 
