@@ -40,10 +40,21 @@
           <span class="tag">IHC</span>
           <span class="tag">CSV summaries</span>
         </div>
-
+        
         <div class="actions">
-          <a class="btn btn-primary" href="#" title="Add your GitHub repo link here">Repository</a>
-          <a class="btn" href="#" title="Optional: link to releases">Download</a>
+          <a class="btn btn-primary"
+             href="https://github.com/Juaco2r/HPADownloader"
+             target="_blank"
+             rel="noreferrer">
+             Repository
+          </a>
+        
+          <a class="btn"
+             href="https://github.com/Juaco2r/HPADownloader/releases"
+             target="_blank"
+             rel="noreferrer">
+             Download
+          </a>
         </div>
       </div>
     </section>
@@ -57,11 +68,10 @@
             <li>Internet connection</li>
             <li><code>ImageDownloaderHPA.exe</code> stored in an accessible folder</li>
           </ul>
-          :contentReference[oaicite:9]{index=9}
           <hr class="sep"/>
           <h2>Output location</h2>
           <p class="small">
-            Everything is saved under your user <b>Downloads</b> folder, inside <code>HPA Images</code>. :contentReference[oaicite:10]{index=10}
+            Everything is saved under your user <b>Downloads</b> folder, inside <code>HPA Images</code>. 
           </p>
         </div>
 
@@ -74,7 +84,7 @@
             <li>Copy the full URL from the address bar.</li>
           </ol>
           <p class="small">
-            Tip: If the tool says it cannot find antibody IDs, the URL is usually not pointing to the correct thumbnail section. :contentReference[oaicite:11]{index=11}
+            Tip: If the tool says it cannot find antibody IDs, the URL is usually not pointing to the correct thumbnail section.
           </p>
         </div>
 
@@ -122,7 +132,7 @@
           <h2>Resolution + format note</h2>
           <p class="small">
             Image resolution is <b>0.5 μm/pixel</b> (same for JPG and TIFF). JPG files are compressed (smaller size),
-            but compression can slightly affect intensities. :contentReference[oaicite:15]{index=15}
+            but compression can slightly affect intensities.
           </p>
           <hr class="sep"/>
           <h2>Common errors</h2>
@@ -130,7 +140,6 @@
             <li><b>No antibody IDs found</b>: verify the URL points to the cancer/IHC thumbnail section.</li>
             <li><b>No new folders in Downloads</b>: check internet connection and URL correctness, and whether <code>HPA Images</code> already exists.</li>
           </ul>
-          :contentReference[oaicite:16]{index=16}
         </div>
       </div>
     </section>
@@ -138,9 +147,9 @@
     <section class="section">
       <div class="card">
         <h2>Screenshots</h2>
-        <p class="small">
-          Add images to <code>/assets/images/tools/hpa-downloader/</code> (e.g., <code>console.png</code>, <code>folder-tree.png</code>, <code>csv-example.png</code>).
-        </p>
+        <p class="small">Visualization of the tool.</p>
+        <img src="/assets/images/tools/HPADownloader.png" style="width:95%; border-radius:14px; border:1px solid var(--line);" alt="TiffCropper UI"/>
+      
       </div>
     </section>
   </main>

@@ -4,10 +4,11 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="icon" type="image/png" href="/assets/images/icons/icon.png">
-  <title>TiffCropper | juaco2r</title>
+  <title>HistRegGUI | juaco2r</title>
   <link rel="stylesheet" href="/assets/css/main.css"/>
 </head>
 <body>
+
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="/">
@@ -16,12 +17,12 @@
              class="brand-icon"/>
         <span>Juaco2r</span>
       </a>
-  
+
       <!-- MOBILE MENU BUTTON -->
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
         ☰
       </button>
-  
+
       <nav id="primary-nav" class="nav-links" aria-label="Primary">
         <a href="/tools/">Tools</a>
         <a href="/research/">Research</a>
@@ -32,80 +33,123 @@
   </header>
 
   <main class="container">
+
+    <!-- Header / Summary -->
     <section class="section">
       <div class="card">
-        <h1 class="h1" style="font-size:2.2rem;">TiffCropper</h1>
-        <p class="lead">Standalone Windows application to extract high-resolution ROIs from large TIFF microscopy images while preserving calibration metadata.</p>
+        <h1 class="h1" style="font-size:2.2rem;">HistRegGUI</h1>
+        <p class="lead">
+          Desktop GUI for histology image registration using <b>DeeperHistReg</b> presets
+          (initial, rigid, nonrigid) designed for practical serial section alignment workflows.
+        </p>
 
         <div class="tool-meta">
-          <span class="tag">Windows 10/11</span>
-          <span class="tag">TIFF/WSI</span>
-          <span class="tag">ROI</span>
-          <span class="tag">No Python required</span>
+          <span class="tag">Registration</span>
+          <span class="tag">DeeperHistReg</span>
+          <span class="tag">GUI</span>
+          <span class="tag">CPU-friendly</span>
         </div>
 
         <div class="actions">
-          <a class="btn btn-primary" href="#" title="Add your GitHub repo link here">Repository</a>
-          <a class="btn" href="/downloads/" title="Optional: link to releases">Download</a>
+          <a class="btn btn-primary"
+             href="https://github.com/Juaco2r/HistRegWSIGUI"
+             target="_blank"
+             rel="noreferrer">
+             Repository
+          </a>
+        
+          <a class="btn"
+             href="https://github.com/Juaco2r/HistRegWSIGUI/releases"
+             target="_blank"
+             rel="noreferrer">
+             Download
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- Main content grid -->
     <section class="section">
       <div class="grid">
+
+        <!-- Overview -->
         <div class="card">
           <h2>Overview</h2>
           <p class="small">
-            Designed for digital histopathology researchers who need precise crops from large TIFF files,
-            keeping calibration metadata (resolution, physical size) intact.
+            HistRegGUI provides a simple interface to run common histology registration stages on pairs of images
+            (source → target). It is useful for aligning serial sections, preparing datasets for 3D reconstruction,
+            and supporting downstream quantitative analysis (segmentation, spatial features, etc.).
           </p>
+
           <hr class="sep"/>
+
           <h2>Key features</h2>
           <ul class="small">
-            <li>Browse any .tif/.tiff file</li>
-            <li>Coordinate-based ROI input (X, Y, Width, Height)</li>
-            <li>Custom suffix for output naming</li>
-            <li>Portable executable (no installation)</li>
+            <li>Clear workflow for <b>initial</b>, <b>rigid</b>, and <b>nonrigid</b> registration</li>
+            <li>Preset-based execution using DeeperHistReg settings</li>
+            <li>Exports registered image(s) and transformation outputs</li>
+            <li>Designed to run on <b>CPU-only</b> machines for accessibility</li>
           </ul>
         </div>
 
+        <!-- Quick start -->
         <div class="card">
           <h2>Quick start</h2>
           <ol class="small">
-            <li>Click <b>Browse TIFF</b> and select a .tif/.tiff file.</li>
-            <li>Enter ROI coordinates: X, Y, Width, Height.</li>
-            <li>Set a suffix (optional) and click <b>CROP &amp; SAVE</b>.</li>
+            <li>Select <b>moving/source</b> image and <b>fixed/target</b> image.</li>
+            <li>Choose a registration preset (initial / rigid / nonrigid).</li>
+            <li>Set output folder and run.</li>
           </ol>
-          <p class="small">Output is saved in the same folder as the original file, using: <code>{original}_crop_{suffix}.tif</code></p>
-        </div>
 
-        <div class="card">
-          <h2>Coordinate system</h2>
           <p class="small">
-            The image is treated as a matrix: <b>X</b> is the column index (left→right), <b>Y</b> is the row index (top→bottom).
-            Width/Height define the ROI size in pixels.
+            Typical output includes the registered image and intermediate results depending on the chosen stage.
           </p>
+
           <hr class="sep"/>
-          <h2>Troubleshooting</h2>
+
+          <h2>Recommended use</h2>
           <ul class="small">
-            <li><b>No file selected</b>: ensure the TIFF is not open in ImageJ/Fiji.</li>
-            <li><b>Cannot read dimensions</b>: verify the file is a valid TIFF.</li>
-            <li><b>Access denied</b>: run as Administrator or move the source to a writable folder.</li>
+            <li>Start with <b>initial</b> when images have large shifts/rotations</li>
+            <li>Use <b>rigid</b> for global alignment</li>
+            <li>Apply <b>nonrigid</b> for local tissue deformation correction</li>
           </ul>
         </div>
+
+        <!-- Inputs / Notes / Troubleshooting -->
+        <div class="card">
+          <h2>Inputs &amp; notes</h2>
+          <ul class="small">
+            <li>Works best when images are comparable in scale and staining conditions.</li>
+            <li>For large WSI-derived regions, consider working on consistent magnification/patch level.</li>
+            <li>Keep file naming consistent to help batch processing and reproducibility.</li>
+          </ul>
+
+          <hr class="sep"/>
+
+          <h2>Troubleshooting</h2>
+          <ul class="small">
+            <li><b>Output looks misaligned</b>: try running <b>initial</b> first or verify image orientation.</li>
+            <li><b>Too slow</b>: use smaller ROIs/patches or reduce resolution for a first pass.</li>
+            <li><b>Memory issues</b>: avoid extremely large images; pre-crop representative regions.</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
+    <!-- Screenshot -->
     <section class="section">
       <div class="card">
         <h2>Screenshots</h2>
-        <p class="small">Place your images here:</p>
-        <p class="small"><code>/assets/images/tools/tiffcropper/</code> (e.g., <code>cover.png</code>, <code>demo.png</code>)</p>
-        <!-- Example:
-        <img src="/assets/images/tools/tiffcropper/cover.png" style="width:100%; border-radius:14px; border:1px solid var(--line);" alt="TiffCropper UI"/>
-        -->
+        <p class="small">Example interface view.</p>
+
+        <img
+          src="/assets/images/tools/DeeperHistReg.png"
+          style="width:100%; border-radius:14px; border:1px solid var(--line);"
+          alt="HistRegGUI UI screenshot"/>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
@@ -113,7 +157,7 @@
       <div class="footer-left">
         © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
       </div>
-  
+
       <div class="footer-right">
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
@@ -121,7 +165,7 @@
       </div>
     </div>
   </footer>
-  
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
