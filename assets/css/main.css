@@ -429,3 +429,50 @@
 @media (min-width: 900px){
   .tool-illus{ height: 165px; }
 }
+
+/* Dropdown/accordion cards (native <details>) */
+.dd {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.10); /* similar to your separators */
+}
+
+.dd summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.25rem; /* close to your h2 feel */
+  color: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  user-select: none;
+}
+
+.dd summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron */
+.dd summary::after {
+  content: "▾";
+  opacity: 0.75;
+  transform: rotate(0deg);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.dd[open] summary::after {
+  transform: rotate(180deg);
+  opacity: 0.95;
+}
+
+/* Optional: subtle hover */
+.dd summary:hover {
+  opacity: 0.95;
+}
+
+/* Reduce spacing inside dropdown lists */
+.dd ul.small {
+  margin-bottom: 0;
+}
