@@ -35,12 +35,18 @@
     <section class="section">
       <div class="card">
         <h1 class="h1" style="font-size:2.2rem;">TiffCropper</h1>
-        <p class="lead">Standalone Windows application to extract high-resolution ROIs from large TIFF microscopy images while preserving calibration metadata.</p>
+        <p class="lead">
+          Standalone application for cropping, tiling, and merging high-resolution whole-slide images and large microscopy files while preserving image metadata and spatial calibration.
+        </p>
 
         <div class="tool-meta">
           <span class="tag">Windows 10/11</span>
-          <span class="tag">TIFF/WSI</span>
-          <span class="tag">ROI</span>
+          <span class="tag">Linux</span>
+          <span class="tag">TIFF</span>
+          <span class="tag">OME-TIFF</span>
+          <span class="tag">NDPI</span>
+          <span class="tag">WSI</span>
+          <span class="tag">Crop / Tile / Merge</span>
           <span class="tag">No Python required</span>
         </div>
 
@@ -59,6 +65,7 @@
              Download
           </a>
         </div>
+      </div>
     </section>
 
     <section class="section">
@@ -66,41 +73,87 @@
         <div class="card">
           <h2>Overview</h2>
           <p class="small">
-            Designed for digital histopathology researchers who need precise crops from large TIFF files,
-            keeping calibration metadata (resolution, physical size) intact.
+            TiffCropper is designed for digital pathology and microscopy workflows requiring precise ROI extraction,
+            tile generation, and tile-based reconstruction from very large image files. Despite its name, the tool is
+            not limited to standard TIFF images and supports common whole-slide image formats such as TIFF, OME-TIFF,
+            and NDPI.
           </p>
+          <p class="small">
+            The application aims to preserve relevant metadata, including resolution information and physical pixel
+            size when available, making the output suitable for downstream analysis in digital pathology, image
+            processing, and computational workflows.
+          </p>
+
           <hr class="sep"/>
+
           <h2>Key features</h2>
           <ul class="small">
-            <li>Browse any .tif/.tiff file</li>
-            <li>Coordinate-based ROI input (X, Y, Width, Height)</li>
-            <li>Custom suffix for output naming</li>
-            <li>Portable executable (no installation)</li>
+            <li>Open large TIFF, OME-TIFF, and NDPI whole-slide images</li>
+            <li>Coordinate-based ROI cropping using X, Y, Width, and Height</li>
+            <li>Tile large images into user-defined rows and columns</li>
+            <li>Merge previously generated tiles back into a reconstructed image</li>
+            <li>Preserve spatial calibration and physical pixel size when available</li>
+            <li>Export OME-TIFF with metadata preservation</li>
+            <li>Optional lossless DEFLATE compression</li>
+            <li>BigTIFF output support for large regions</li>
+            <li>Pyramid-aware preview for efficient navigation of large images</li>
+            <li>Standalone executable; no Python installation required</li>
           </ul>
         </div>
 
         <div class="card">
           <h2>Quick start</h2>
           <ol class="small">
-            <li>Click <b>Browse TIFF</b> and select a .tif/.tiff file.</li>
-            <li>Enter ROI coordinates: X, Y, Width, Height.</li>
-            <li>Set a suffix (optional) and click <b>CROP &amp; SAVE</b>.</li>
+            <li>Open the application and select a supported image file.</li>
+            <li>Use the preview to inspect the image and define the target region.</li>
+            <li>Enter ROI coordinates: X, Y, Width, and Height.</li>
+            <li>Select the desired output mode: crop, tile, or merge.</li>
+            <li>Choose the output format and compression options when available.</li>
+            <li>Click the corresponding action button to generate the output.</li>
           </ol>
-          <p class="small">Output is saved in the same folder as the original file, using: <code>{original}_crop_{suffix}.tif</code></p>
+          <p class="small">
+            Cropped outputs and generated tiles are saved with structured filenames to make downstream organization
+            and reconstruction easier.
+          </p>
+
+          <hr class="sep"/>
+
+          <h2>Typical use cases</h2>
+          <ul class="small">
+            <li>Extract high-resolution regions of interest from whole-slide images</li>
+            <li>Generate tiles for deep learning or image analysis workflows</li>
+            <li>Split very large images into smaller manageable files</li>
+            <li>Reconstruct tiled regions after external processing</li>
+            <li>Preserve microscopy calibration metadata for quantitative analysis</li>
+          </ul>
         </div>
 
         <div class="card">
           <h2>Coordinate system</h2>
           <p class="small">
-            The image is treated as a matrix: <b>X</b> is the column index (left→right), <b>Y</b> is the row index (top→bottom).
-            Width/Height define the ROI size in pixels.
+            Images are treated as pixel matrices. <b>X</b> corresponds to the horizontal coordinate
+            or column index from left to right, while <b>Y</b> corresponds to the vertical coordinate
+            or row index from top to bottom. Width and Height define the ROI size in pixels.
           </p>
+
           <hr class="sep"/>
+
+          <h2>Output formats</h2>
+          <ul class="small">
+            <li><b>TIFF:</b> standard output for cropped regions and tiles</li>
+            <li><b>OME-TIFF:</b> recommended when physical calibration metadata should be preserved</li>
+            <li><b>BigTIFF:</b> used when output files exceed standard TIFF size limits</li>
+          </ul>
+
+          <hr class="sep"/>
+
           <h2>Troubleshooting</h2>
           <ul class="small">
-            <li><b>No file selected</b>: ensure the TIFF is not open in ImageJ/Fiji.</li>
-            <li><b>Cannot read dimensions</b>: verify the file is a valid TIFF.</li>
-            <li><b>Access denied</b>: run as Administrator or move the source to a writable folder.</li>
+            <li><b>No file selected:</b> verify that the input path is valid and accessible.</li>
+            <li><b>Cannot read dimensions:</b> confirm that the file is a valid TIFF, OME-TIFF, or NDPI image.</li>
+            <li><b>Access denied:</b> move the source image to a writable folder or check file permissions.</li>
+            <li><b>Large output fails:</b> enable BigTIFF output or reduce the ROI/tile size.</li>
+            <li><b>Linux dependency error:</b> use the official release package or rebuild the app with bundled image codecs.</li>
           </ul>
         </div>
       </div>
@@ -108,9 +161,23 @@
 
     <section class="section">
       <div class="card">
+        <h2>Why the name TiffCropper?</h2>
+        <p class="small">
+          TiffCropper was originally developed for cropping large TIFF microscopy images. The current version has
+          expanded beyond simple TIFF cropping and now supports whole-slide image workflows including ROI extraction,
+          tiling, merging, OME-TIFF export, and NDPI input support. The original name is maintained for continuity,
+          while the tool now functions as a broader WSI crop, tile, and merge utility.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
         <h2>Screenshots</h2>
-        <p class="small">Visualization of the tool.</p>
-        <img src="/assets/images/tools/WSICropper.png" style="width:95%; border-radius:14px; border:1px solid var(--line);" alt="TiffCropper UI"/>
+        <p class="small">Visualization of the TiffCropper interface.</p>
+        <img src="/assets/images/tools/WSICropper.png"
+             style="width:95%; border-radius:14px; border:1px solid var(--line);"
+             alt="TiffCropper user interface"/>
       </div>
     </section>
   </main>
