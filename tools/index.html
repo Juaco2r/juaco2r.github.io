@@ -17,12 +17,11 @@
              class="brand-icon"/>
         <span>Juaco2r</span>
       </a>
-  
-      <!-- MOBILE MENU BUTTON -->
+
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
         ☰
       </button>
-  
+
       <nav id="primary-nav" class="nav-links" aria-label="Primary">
         <a href="/tools/">Tools</a>
         <a href="/research/">Research</a>
@@ -34,20 +33,54 @@
 
   <main class="container">
 
-    <!-- Page Header -->
     <section class="section">
       <div class="card">
         <h1 class="h1" style="font-size:2.2rem;">Tools</h1>
         <p class="lead">
           A collection of software tools designed to support scalable digital pathology workflows,
-          from whole-slide image processing to dataset preparation and quantitative analysis.
+          from whole-slide image processing to dataset preparation, image registration, segmentation
+          and quantitative analysis.
         </p>
       </div>
     </section>
 
-    <!-- Tools Grid -->
     <section class="section">
       <div class="grid">
+
+        <!-- Cell Well Segmentation -->
+        <div class="card tool-card">
+          <h2>Cell Well Segmentation</h2>
+          <p class="small">
+            Desktop GUI for immunofluorescence cell segmentation, feature extraction,
+            Manders colocalization analysis, QuPath-compatible GeoJSON export and optional
+            DICE validation using ground-truth annotations.
+          </p>
+
+          <div class="tool-illus">
+            <img src="/assets/images/tools/CellWellSegmentation.png"
+                alt="Cell Well Segmentation GUI screenshot">
+          </div>
+
+          <ul class="small">
+            <li>ROI-based parameter exploration</li>
+            <li>Instance mask, CSV, Manders and GeoJSON outputs</li>
+            <li>DICE/IoU validation against full-image GeoJSON annotations</li>
+          </ul>
+
+          <div class="tool-meta">
+            <span class="tag">IF microscopy</span>
+            <span class="tag">Segmentation</span>
+            <span class="tag">Manders</span>
+            <span class="tag">DICE</span>
+          </div>
+
+          <hr class="sep"/>
+
+          <div class="actions">
+            <a class="btn" href="/tools/cell-well-segmentation.html">Documentation</a>
+            <a class="btn" href="https://github.com/Juaco2r/cell-well-segmentation" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </div>
 
         <!-- HPA Downloader -->
         <div class="card tool-card">
@@ -57,7 +90,6 @@
             generating structured folders and CSV metadata summaries for dataset construction.
           </p>
 
-          <!-- Concept Illustration -->
           <div class="tool-illus">
             <img src="/assets/images/tools/HPADownloader_concept.png"
                 alt="HPA Downloader conceptual illustration">
@@ -82,7 +114,7 @@
             <a class="btn" href="https://github.com/Juaco2r/HPADownloader" target="_blank" rel="noreferrer">Source</a>
           </div>
         </div>
-        
+
         <!-- TiffCropper -->
         <div class="card tool-card">
           <h2>TiffCropper</h2>
@@ -91,7 +123,6 @@
             preserving calibration metadata and spatial integrity.
           </p>
 
-          <!-- Concept Illustration -->
           <div class="tool-illus">
             <img src="/assets/images/tools/WSICropper_concept.png"
                 alt="TiffCropper conceptual illustration">
@@ -117,7 +148,6 @@
           </div>
         </div>
 
-
         <!-- HistRegGUI -->
         <div class="card tool-card">
           <h2>HistRegGUI</h2>
@@ -126,7 +156,6 @@
             (initial, rigid, nonrigid) with CPU-only execution support.
           </p>
 
-          <!-- Concept Illustration -->
           <div class="tool-illus">
             <img src="/assets/images/tools/DeeperHistReg_concept.png"
                 alt="HistRegGUI / DeeperHistReg conceptual illustration">
@@ -152,14 +181,9 @@
           </div>
         </div>
 
-
-        
-
       </div>
     </section>
 
-
-    <!-- Pipeline Section -->
     <section class="section">
       <div class="card">
         <h2>Pipeline Development</h2>
