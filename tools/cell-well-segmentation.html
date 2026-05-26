@@ -6,6 +6,30 @@
   <link rel="icon" type="image/png" href="/assets/images/icons/icon.png">
   <title>Cell Well Segmentation | juaco2r</title>
   <link rel="stylesheet" href="/assets/css/main.css"/>
+  <style>
+    .tool-image-wrap {
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .tool-image {
+      width: min(100%, 760px);
+      max-height: 480px;
+      object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .tool-image.small-preview {
+      width: min(100%, 620px);
+      max-height: 390px;
+    }
+
+    .compact-list li {
+      margin-bottom: 0.35rem;
+    }
+  </style>
 </head>
 <body>
   <header class="nav">
@@ -17,6 +41,7 @@
         <span>Juaco2r</span>
       </a>
 
+      <!-- MOBILE MENU BUTTON -->
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
         ☰
       </button>
@@ -31,157 +56,147 @@
   </header>
 
   <main class="container">
-
     <section class="section">
       <div class="card">
         <h1 class="h1" style="font-size:2.2rem;">Cell Well Segmentation</h1>
         <p class="lead">
-          Desktop GUI for immunofluorescence cell segmentation, cell-level feature extraction,
-          Manders colocalization analysis, QuPath-compatible GeoJSON export and optional
-          DICE/IoU validation against ground-truth annotations.
+          Desktop GUI for immunofluorescence microscopy cell segmentation, cell-level feature extraction,
+          Manders colocalization analysis, QuPath-compatible GeoJSON export, and optional DICE/IoU validation
+          against ground-truth GeoJSON annotations.
         </p>
 
         <div class="tool-meta">
-          <span class="tag">Python ≥ 3.9</span>
-          <span class="tag">PyQt5 GUI</span>
+          <span class="tag">Windows executable</span>
+          <span class="tag">Python / PyQt5</span>
           <span class="tag">TIFF / OME-TIFF</span>
-          <span class="tag">Watershed</span>
           <span class="tag">Manders</span>
           <span class="tag">DICE validation</span>
-          <span class="tag">QuPath GeoJSON</span>
         </div>
 
         <div class="actions">
-          <a class="btn btn-primary" href="https://github.com/Juaco2r/cell-well-segmentation" target="_blank" rel="noreferrer">Repository</a>
-          <a class="btn" href="https://doi.org/10.5281/zenodo.20387083" target="_blank" rel="noreferrer">Zenodo DOI</a>
-          <a class="btn" href="/tools/">Back to tools</a>
-        </div>
+          <a class="btn btn-primary"
+             href="https://github.com/Juaco2r/cell-well-segmentation"
+             target="_blank"
+             rel="noreferrer">
+             Repository
+          </a>
 
-        <p class="small" style="margin-top:14px;">
-          <b>DOI:</b> <a href="https://doi.org/10.5281/zenodo.20387083" target="_blank" rel="noreferrer">10.5281/zenodo.20387083</a>
+          <a class="btn"
+             href="https://github.com/Juaco2r/cell-well-segmentation/releases"
+             target="_blank"
+             rel="noreferrer">
+             Download
+          </a>
+
+          <a class="btn"
+             href="https://doi.org/10.5281/zenodo.20387083"
+             target="_blank"
+             rel="noreferrer">
+             DOI
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Workflow overview</h2>
+        <p class="small">
+          The application is designed for microscopy workflows where users need to segment individual cells,
+          quantify fluorescence signals, evaluate channel colocalization, and export results for downstream
+          analysis or review in QuPath.
         </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="card" style="padding:0; overflow:hidden;">
-        <img src="/assets/images/tools/CellWellSegmentationConcept.png"
-             alt="Cell Well Segmentation conceptual workflow"
-             style="width:100%; display:block;">
+        <div class="tool-image-wrap">
+          <img src="/assets/images/tools/CellWellSegmentationConcept.png"
+               class="tool-image"
+               alt="Cell Well Segmentation workflow concept">
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="grid">
         <div class="card">
-          <h2>What it does</h2>
-          <p class="small">
-            Cell Well Segmentation implements a classical computer-vision workflow for low-density
-            immunofluorescence cell images. It segments cell instances, extracts per-cell morphology
-            and intensity features, calculates Manders colocalization metrics, exports QuPath-compatible
-            GeoJSON annotations and can validate masks against a full-image ground-truth GeoJSON.
-          </p>
-          <ul class="small">
-            <li>Single-image or bulk-image processing</li>
-            <li>ROI-based parameter exploration before full-image processing</li>
-            <li>Skip completed outputs or resume missing post-processing outputs</li>
-            <li>Optional DICE validation during parameter tuning and final processing</li>
+          <h2>Requirements</h2>
+          <ul class="small compact-list">
+            <li>Windows executable release, or Python environment for source execution.</li>
+            <li>Microscopy images in TIFF, OME-TIFF, or supported raster formats.</li>
+            <li>For validation, a ground-truth GeoJSON annotation in the same coordinate system as the image.</li>
           </ul>
-        </div>
-
-        <div class="card">
-          <h2>Input images</h2>
-          <p class="small">
-            The application is designed for multi-channel immunofluorescence microscopy images,
-            especially TIFF and OME-TIFF files.
-          </p>
           <hr class="sep"/>
-          <h3>Default channel convention</h3>
-          <ul class="small">
-            <li><code>0</code>: nuclei channel, for example DAPI</li>
-            <li><code>1</code>: red marker channel</li>
-            <li><code>2</code>: green marker channel</li>
-            <li><code>3</code>: cytoplasmic/cell channel used for cell foreground</li>
-          </ul>
+          <h2>Recommended use</h2>
           <p class="small">
-            Channel mapping can be adjusted from the Custom parameters panel.
+            Start with a small ROI in <b>Parameter Exploration</b>, tune the segmentation visually and with DICE/IoU
+            if ground truth is available, then run the full image or batch set.
           </p>
         </div>
 
         <div class="card">
-          <h2>Segmentation workflow</h2>
-          <ol class="small">
-            <li>Read the selected microscopy image and preserve channel structure when possible.</li>
-            <li>Create RGB and CellCyto composites.</li>
-            <li>Smooth the nuclear channel and detect local maxima as cell seeds.</li>
-            <li>Estimate foreground from the cytoplasmic/cell channel using Otsu-based thresholding.</li>
-            <li>Run marker-controlled watershed segmentation.</li>
-            <li>Filter segmented instances by object area.</li>
-            <li>Export instance masks, feature tables, Manders metrics, GeoJSON and previews.</li>
-          </ol>
+          <h2>Main features</h2>
+          <ul class="small compact-list">
+            <li>Single-image and bulk-image processing.</li>
+            <li>ROI-based parameter exploration before full processing.</li>
+            <li>Nuclei-based seed detection and marker-controlled watershed segmentation.</li>
+            <li>QuPath-compatible GeoJSON export.</li>
+            <li>Skip completed or resume missing outputs for long batch runs.</li>
+            <li>Optional DICE/IoU validation using ground-truth GeoJSON.</li>
+          </ul>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="card" style="padding:0; overflow:hidden;">
-        <img src="/assets/images/tools/CellWellSegmentation.png"
-             alt="Cell Well Segmentation application screenshot"
-             style="width:100%; display:block;">
+        <div class="card">
+          <h2>Channel convention</h2>
+          <ul class="small compact-list">
+            <li><code>0</code>: nuclear channel, for example DAPI.</li>
+            <li><code>1</code>: red marker channel.</li>
+            <li><code>2</code>: green marker channel.</li>
+            <li><code>3</code>: cytoplasmic channel used for CellCyto segmentation.</li>
+          </ul>
+          <p class="small">
+            Channel mapping can be changed in the GUI under <b>Custom</b> parameters.
+          </p>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="grid">
         <div class="card">
-          <h2>Feature extraction</h2>
-          <p class="small">
-            For each accepted segmented cell, the software exports morphology, centroid and channel
-            intensity measurements. The main feature table is saved as <code>cell_features.csv</code>.
-          </p>
-          <ul class="small">
-            <li><code>label</code>: instance identifier</li>
-            <li><code>area_px</code> and <code>perimeter_px</code></li>
-            <li><code>centroid_y</code> and <code>centroid_x</code></li>
-            <li>Red, green and blue <code>max</code>, <code>mean</code>, <code>median</code>, <code>std</code>, <code>p25</code> and <code>p75</code></li>
-            <li><code>red_total</code>, <code>green_total</code>, <code>blue_total</code></li>
-            <li><code>red_cv</code>, <code>green_cv</code>, <code>blue_cv</code></li>
-            <li><code>red_positive</code>, <code>green_positive</code> and <code>double_positive</code> as 0/1 biological positivity flags</li>
+          <h2>Outputs</h2>
+          <p class="small">For each processed image, the app creates a dedicated output folder with:</p>
+          <ul class="small compact-list">
+            <li><code>RGB.tif</code> and <code>CellCyto.tif</code> composite images.</li>
+            <li><code>instances.tif</code> instance segmentation mask.</li>
+            <li><code>cell_features.csv</code> cell-level morphology and intensity features.</li>
+            <li><code>manders_features.csv</code> Manders colocalization metrics.</li>
+            <li><code>cell_features_with_manders.csv</code> merged feature table.</li>
+            <li><code>manders_summary.json</code> threshold summary.</li>
+            <li><code>qupath_final.geojson</code> QuPath-compatible annotations.</li>
+            <li><code>preview.png</code> quality-control visualization.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h2>Biological positivity flags</h2>
-          <p class="small">
-            The positivity columns are not segmentation thresholds. They classify segmented cells
-            after feature extraction using the user-defined biological red and green thresholds.
-          </p>
-          <pre style="white-space:pre-wrap; margin:0; color:var(--muted); background:rgba(255,255,255,0.03); border:1px solid var(--line); border-radius:14px; padding:12px;">
-red_positive = red_mean ≥ biological_red_threshold
-green_positive = green_mean ≥ biological_green_threshold
-double_positive = red_positive AND green_positive
-          </pre>
-          <p class="small">
-            They are exported as <code>0</code>/<code>1</code> values to make filtering easier in Excel, R or Python.
-          </p>
+          <h2>Cell-level features</h2>
+          <p class="small">The CSV feature table includes per-cell measurements such as:</p>
+          <ul class="small compact-list">
+            <li>Label ID, area, perimeter and centroid coordinates.</li>
+            <li>Red, green and blue mean, max, median, standard deviation and percentile values.</li>
+            <li>Total channel intensity per cell.</li>
+            <li>Coefficient of variation for red, green and blue channels.</li>
+            <li><code>red_positive</code>, <code>green_positive</code> and <code>double_positive</code> biological positivity flags.</li>
+          </ul>
         </div>
 
         <div class="card">
           <h2>Manders colocalization</h2>
           <p class="small">
-            Manders coefficients are calculated per cell to quantify asymmetric overlap between the
-            red and green marker signals. The output is saved in <code>manders_features.csv</code> and
-            merged into <code>cell_features_with_manders.csv</code>.
+            Manders coefficients are computed per segmented cell. The red-in-green and green-in-red values are
+            asymmetric and should be interpreted independently: one reports the fraction of red signal overlapping
+            green-positive pixels, while the other reports the fraction of green signal overlapping red-positive pixels.
           </p>
-          <ul class="small">
-            <li><code>manders_global_red_in_green</code>: fraction of red signal located in green-positive pixels using global thresholds.</li>
-            <li><code>manders_global_green_in_red</code>: fraction of green signal located in red-positive pixels using global thresholds.</li>
-            <li><code>manders_cellotsu_red_in_green</code> and <code>manders_cellotsu_green_in_red</code>: same calculation using per-cell Otsu thresholds.</li>
-            <li><code>manders_biological_red_in_green</code> and <code>manders_biological_green_in_red</code>: same calculation using user-defined biological thresholds.</li>
-          </ul>
           <p class="small">
-            The two directions are expected to differ because Manders coefficients are asymmetric:
-            red-in-green and green-in-red measure different biological overlap relationships.
+            Biological red/green thresholds are used to classify cells as positive or double-positive and are saved
+            for reproducibility; they do not directly change the segmentation mask.
           </p>
         </div>
       </div>
@@ -190,46 +205,43 @@ double_positive = red_positive AND green_positive
     <section class="section">
       <div class="grid">
         <div class="card">
-          <h2>DICE / validation</h2>
+          <h2>Validation and parameter tuning</h2>
           <p class="small">
-            Cell Well Segmentation can compare the predicted binary cell mask against a full-image
-            ground-truth GeoJSON annotation. During Parameter Exploration, the selected ROI is matched
-            to the corresponding region of the full-image GeoJSON, allowing parameter tuning with
-            DICE, IoU, precision and recall.
+            When a ground-truth GeoJSON is available, Cell Well Segmentation can compute pixel-level DICE,
+            IoU, precision and recall. During Parameter Exploration, the full-image GeoJSON can be selected
+            and the application evaluates only the selected ROI, making it easier to tune parameters before
+            processing the full image.
           </p>
-          <ul class="small">
-            <li>Uses QuPath-style full-image GeoJSON coordinates.</li>
-            <li>Rasterizes the relevant annotation region to the same mask size.</li>
-            <li>Reports pixel-level DICE, IoU, precision and recall.</li>
-            <li>Optional final validation outputs are saved under <code>validation/</code>.</li>
+        </div>
+
+        <div class="card">
+          <h2>Existing output handling</h2>
+          <ul class="small compact-list">
+            <li><b>Reprocess from zero:</b> recomputes the selected images.</li>
+            <li><b>Skip completed:</b> avoids processing images with complete output folders.</li>
+            <li><b>Resume missing outputs:</b> regenerates missing outputs when intermediate files are available.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h2>Main outputs</h2>
-          <ul class="small">
-            <li><code>RGB.tif</code>: RGB composite used for feature extraction</li>
-            <li><code>CellCyto.tif</code>: composite used for segmentation</li>
-            <li><code>instances.tif</code>: instance segmentation mask</li>
-            <li><code>cell_features.csv</code>: cell-level measurements and positivity flags</li>
-            <li><code>manders_features.csv</code>: cell-level Manders metrics</li>
-            <li><code>cell_features_with_manders.csv</code>: merged feature table</li>
-            <li><code>manders_summary.json</code>: thresholds and summary metadata</li>
-            <li><code>qupath_final.geojson</code>: QuPath-compatible cell annotations</li>
-            <li><code>preview.png</code>: visual quality-control summary</li>
-            <li><code>validation/</code>: optional DICE/IoU reports and masks</li>
+          <h2>Notes and limitations</h2>
+          <ul class="small compact-list">
+            <li>Designed for fluorescence cell images where individual cells are distinguishable.</li>
+            <li>Parameters may need adjustment for different magnifications, staining patterns or cell densities.</li>
+            <li>Not intended as a replacement for manual expert review when validation or publication-quality analysis is required.</li>
           </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-          <h2>Notes &amp; limitations</h2>
-          <ul class="small">
-            <li>Best suited for low-density or moderately separated cells.</li>
-            <li>Highly confluent or strongly overlapping cells may require parameter tuning.</li>
-            <li>No machine-learning or deep-learning model is required.</li>
-            <li>Ground-truth GeoJSON validation assumes the annotation uses the same image coordinates and resolution.</li>
-            <li>Large images may require sufficient RAM because full-image processing reads image data into memory.</li>
-          </ul>
+    <section class="section">
+      <div class="card">
+        <h2>Screenshot</h2>
+        <p class="small">Main interface for selecting images, tuning parameters, running batch processing and reviewing the log.</p>
+        <div class="tool-image-wrap">
+          <img src="/assets/images/tools/CellWellSegmentation.png"
+               class="tool-image small-preview"
+               alt="Cell Well Segmentation graphical interface">
         </div>
       </div>
     </section>
@@ -239,17 +251,11 @@ double_positive = red_positive AND green_positive
         <h2>Citation</h2>
         <p class="small">
           Rodriguez Rojas JJ. <i>Cell Well Segmentation: Immunofluorescence Cell Segmentation,
-          Quantification and Validation.</i> Version 1.0.0. Zenodo. 2026.
+          Quantification and Validation</i>. Version 1.0.0. Zenodo. 2026.
           doi: <a href="https://doi.org/10.5281/zenodo.20387083" target="_blank" rel="noreferrer">10.5281/zenodo.20387083</a>.
-        </p>
-        <p>
-          <a href="https://doi.org/10.5281/zenodo.20387083" target="_blank" rel="noreferrer">
-            <img src="https://zenodo.org/badge/1149252759.svg" alt="DOI">
-          </a>
         </p>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
