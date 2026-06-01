@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/png" href="/assets/images/icons/icon.png">
+  <title>QuPath GeoJSON Converter | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png"
+             alt="juaco2r logo"
+             class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="nav-links" aria-label="Primary">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">QuPath GeoJSON Converter</h1>
+        <p class="lead">
+          Lightweight desktop application for converting GeoJSON annotation files from external
+          annotation or segmentation tools into QuPath-compatible annotation and detection formats.
+        </p>
+
+        <div class="tool-meta">
+          <span class="tag">QuPath</span>
+          <span class="tag">GeoJSON</span>
+          <span class="tag">Digital pathology</span>
+          <span class="tag">Annotations</span>
+          <span class="tag">Detections</span>
+          <span class="tag">Tkinter GUI</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="https://github.com/Juaco2r/qupath-geojson-converter"
+             target="_blank"
+             rel="noreferrer">
+             Repository
+          </a>
+
+          <a class="btn"
+             href="https://github.com/Juaco2r/qupath-geojson-converter/releases"
+             target="_blank"
+             rel="noreferrer">
+             Download
+          </a>
+
+          <a class="btn"
+             href="https://doi.org/10.5281/zenodo.20496387"
+             target="_blank"
+             rel="noreferrer">
+             DOI
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card" style="padding:0; overflow:hidden;">
+        <img src="/assets/images/tools/QuPath_convert_concept.png"
+             style="width:100%; display:block;"
+             alt="Conceptual workflow of QuPath GeoJSON Converter"/>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>What it does</h2>
+          <p class="small">
+            The converter rewrites external GeoJSON classification fields, such as
+            <code>class_name</code> and <code>class_color_hex</code>, into QuPath-style
+            object properties using <code>objectType</code> and <code>classification</code>.
+          </p>
+          <ul class="small">
+            <li>Converts single files, multiple files or complete folders.</li>
+            <li>Supports optional recursive folder processing.</li>
+            <li>Saves outputs in the original location or a custom folder.</li>
+            <li>Preserves extra metadata fields when needed.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Input and output</h2>
+          <p class="small">Expected input metadata:</p>
+          <pre><code>{
+  "class_name": "Neoplastic Tissue",
+  "class_color_hex": "#FF0100"
+}</code></pre>
+          <p class="small">Converted QuPath-compatible properties:</p>
+          <pre><code>{
+  "objectType": "annotation",
+  "classification": {
+    "name": "Neoplastic Tissue",
+    "color": [255, 1, 0]
+  }
+}</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Requirements</h2>
+          <ul class="small">
+            <li>Standalone release: download the executable from GitHub Releases.</li>
+            <li>From source: Python 3.9 or later.</li>
+            <li>Python packages: <code>shapely</code>.</li>
+            <li>Tkinter GUI support. Tkinter is included with most Python installations.</li>
+          </ul>
+          <hr class="sep"/>
+          <h2>Output files</h2>
+          <p class="small">
+            Converted files are saved with the suffix <code>_qupath.geojson</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>1. Merge into one annotation per class</h2>
+          <p class="small">
+            Creates one class-level QuPath annotation for each class by merging geometries
+            that share the same class name.
+          </p>
+          <p class="small"><b>Useful for:</b> broad class-level regions such as stroma, tumor or ink areas.</p>
+        </div>
+
+        <div class="card">
+          <h2>2. Standard QuPath annotations</h2>
+          <p class="small">
+            Converts each input GeoJSON feature into one QuPath annotation without merging,
+            splitting or converting it into a detection object.
+          </p>
+          <p class="small"><b>Useful for:</b> safest general-purpose conversion.</p>
+        </div>
+
+        <div class="card">
+          <h2>3. Individual objects for counts</h2>
+          <p class="small">
+            Converts each input feature into a QuPath detection/object instead of an annotation.
+          </p>
+          <p class="small"><b>Useful for:</b> class-specific object counting in QuPath.</p>
+        </div>
+
+        <div class="card">
+          <h2>4. Class annotations + individual objects</h2>
+          <p class="small">
+            Creates class-level annotations while also preserving the individual objects for that class.
+          </p>
+          <p class="small"><b>Useful for:</b> combining class-level regions with object-level counts.</p>
+        </div>
+
+        <div class="card">
+          <h2>5. Split MultiPolygon</h2>
+          <p class="small">
+            Splits MultiPolygon geometries into individual Polygon annotations.
+          </p>
+          <p class="small"><b>Useful for:</b> troubleshooting complex geometries during QuPath import.</p>
+        </div>
+
+        <div class="card">
+          <h2>Import into QuPath</h2>
+          <ol class="small">
+            <li>Run the converter and generate the <code>_qupath.geojson</code> file.</li>
+            <li>Open the corresponding image in QuPath.</li>
+            <li>Import the converted GeoJSON file into the QuPath project.</li>
+            <li>Review classes, annotations, detections and counts according to the selected mode.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Screenshots</h2>
+        <p class="small">Main interface and conversion workflow.</p>
+        
+          <div>
+            <img src="/assets/images/tools/Screenshot_app.png"
+                 style="width:100%; border-radius:14px; border:1px solid var(--line);"
+                 alt="QuPath GeoJSON Converter main interface"/>
+          </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Build from source</h2>
+          <p class="small">Clone and run:</p>
+          <pre><code>git clone https://github.com/Juaco2r/qupath-geojson-converter.git
+cd qupath-geojson-converter
+pip install -r requirements.txt
+python qupath_geojson_converter_gui.py</code></pre>
+          <p class="small">Build locally with PyInstaller:</p>
+          <pre><code>pyinstaller --clean --noconfirm qupath_geojson_converter_gui.spec</code></pre>
+        </div>
+
+        <div class="card">
+          <h2>Citation</h2>
+          <p class="small">
+            If you use this software, please cite:
+          </p>
+          <p class="small">
+            Rodriguez J. <b>QuPath GeoJSON Converter</b>. Version 1.0.0. Zenodo.
+            DOI: <a href="https://doi.org/10.5281/zenodo.20496387" target="_blank" rel="noreferrer">10.5281/zenodo.20496387</a>.
+          </p>
+          <hr class="sep"/>
+          <h2>License</h2>
+          <p class="small">MIT License.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Disclaimer</h2>
+        <p class="small">
+          This is an independent utility and is not affiliated with or endorsed by the QuPath project.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
+      </div>
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="/assets/js/nav.js"></script>
+</body>
+</html>

@@ -38,48 +38,14 @@
         <h1 class="h1" style="font-size:2.2rem;">Tools</h1>
         <p class="lead">
           A collection of software tools designed to support scalable digital pathology workflows,
-          from whole-slide image processing to dataset preparation, image registration, segmentation
-          and quantitative analysis.
+          from whole-slide image processing to dataset preparation, image registration, segmentation,
+          annotation conversion and quantitative analysis.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="grid">
-
-        <!-- Cell Well Segmentation -->
-        <div class="card tool-card">
-          <h2>Cell Well Segmentation</h2>
-          <p class="small">
-            Desktop GUI for immunofluorescence cell segmentation, feature extraction,
-            Manders colocalization analysis, QuPath-compatible GeoJSON export and optional
-            DICE validation using ground-truth annotations.
-          </p>
-
-          <div class="tool-illus">
-            <img src="/assets/images/tools/CellWellSegmentation.png"
-                alt="Cell Well Segmentation GUI screenshot">
-          </div>
-
-          <ul class="small">
-            <li>ROI-based parameter exploration</li>
-            <li>Instance mask, CSV, Manders and GeoJSON outputs</li>
-            <li>DICE/IoU validation against full-image GeoJSON annotations</li>
-          </ul>
-
-          <div class="tool-meta">
-            <span class="tag">IF microscopy</span>
-            <span class="tag">Segmentation</span>
-            <span class="tag">Manders</span>
-          </div>
-
-          <hr class="sep"/>
-
-          <div class="actions">
-            <a class="btn" href="/tools/cell-well-segmentation.html">Documentation</a>
-            <a class="btn" href="https://github.com/Juaco2r/cell-well-segmentation" target="_blank" rel="noreferrer">Source</a>
-          </div>
-        </div>
 
         <!-- HPA Downloader -->
         <div class="card tool-card">
@@ -152,7 +118,7 @@
           <h2>HistRegGUI</h2>
           <p class="small">
             Desktop GUI for histology image registration using DeeperHistReg presets
-            (initial, rigid, nonrigid) with CPU-only execution support.
+            with CPU-only execution support.
           </p>
 
           <div class="tool-illus">
@@ -180,6 +146,73 @@
           </div>
         </div>
 
+        <!-- Cell Well Segmentation -->
+        <div class="card tool-card">
+          <h2>Cell Well Segmentation</h2>
+          <p class="small">
+            Desktop GUI for immunofluorescence cell segmentation, feature extraction,
+            Manders colocalization analysis, QuPath-compatible GeoJSON export and optional
+            DICE validation using ground-truth annotations.
+          </p>
+
+          <div class="tool-illus">
+            <img src="/assets/images/tools/CellWellSegmentation.png"
+                alt="Cell Well Segmentation GUI screenshot">
+          </div>
+
+          <ul class="small">
+            <li>ROI-based parameter exploration</li>
+            <li>Instance mask, CSV, Manders and GeoJSON outputs</li>
+            <li>DICE/IoU validation against full-image GeoJSON annotations</li>
+          </ul>
+
+          <div class="tool-meta">
+            <span class="tag">IF microscopy</span>
+            <span class="tag">Segmentation</span>
+            <span class="tag">Manders</span>
+          </div>
+
+          <hr class="sep"/>
+
+          <div class="actions">
+            <a class="btn" href="/tools/cell-well-segmentation.html">Documentation</a>
+            <a class="btn" href="https://github.com/Juaco2r/cell-well-segmentation" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </div>
+
+        <!-- QuPath GeoJSON Converter -->
+        <div class="card tool-card">
+          <h2>QuPath GeoJSON Converter</h2>
+          <p class="small">
+            Desktop GUI for converting external GeoJSON annotations into QuPath-compatible annotations,
+            detections and class-based objects.
+          </p>
+
+          <div class="tool-illus">
+            <img src="/assets/images/tools/QuPath_convert_concept.png"
+                 alt="QuPath GeoJSON Converter conceptual workflow">
+          </div>
+
+          <ul class="small">
+            <li>GeoJSON classification conversion</li>
+            <li>Annotation, detection and object-count modes</li>
+            <li>Batch file and folder processing</li>
+          </ul>
+
+          <div class="tool-meta">
+            <span class="tag">QuPath</span>
+            <span class="tag">GeoJSON</span>
+            <span class="tag">Annotations</span>
+          </div>
+
+          <hr class="sep"/>
+
+          <div class="actions">
+            <a class="btn" href="/tools/qupath-geojson-converter.html">Documentation</a>
+            <a class="btn" href="https://github.com/Juaco2r/qupath-geojson-converter" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -193,7 +226,7 @@
         <p class="small">
           The system integrates automated tissue detection, artifact cleaning,
           efficient patch extraction and storage, and segmentation modules
-          for quantitative tumor microenvironment (TME) characterization.
+          for quantitative tumor microenvironment characterization.
         </p>
       </div>
     </section>
