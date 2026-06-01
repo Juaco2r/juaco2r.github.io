@@ -14,7 +14,8 @@
       <a class="brand" href="/">
         <img src="/assets/images/icons/icon.png"
              alt="juaco2r logo"
-             class="brand-icon"/>
+             class="brand-icon"
+             decoding="async"/>
         <span>Juaco2r</span>
       </a>
 
@@ -62,7 +63,7 @@
             <div style="font-weight:650;">Histology lung cancer animation</div>
             <div class="small">Abstract animation inspired by lung cancer histology</div>
           </div>
-          <div style="height:360px;">
+          <div style="height:300px;">
             <canvas id="histoCanvas" style="width:100%; height:100%; display:block;"></canvas>
           </div>
         </div>
@@ -84,7 +85,9 @@
 
           <div class="tool-illus">
             <img src="/assets/images/tools/HPADownloader_concept.png"
-                 alt="HPA Downloader conceptual illustration">
+                 alt="HPA Downloader conceptual illustration"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
           <div class="tool-meta">
@@ -105,7 +108,9 @@
 
           <div class="tool-illus">
             <img src="/assets/images/tools/WSICropper_concept.png"
-                 alt="TiffCropper conceptual illustration">
+                 alt="TiffCropper conceptual illustration"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
           <div class="tool-meta">
@@ -126,7 +131,9 @@
 
           <div class="tool-illus">
             <img src="/assets/images/tools/DeeperHistReg_concept.png"
-                 alt="HistRegGUI / DeeperHistReg conceptual illustration">
+                 alt="HistRegGUI / DeeperHistReg conceptual illustration"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
           <div class="tool-meta">
@@ -147,7 +154,9 @@
 
           <div class="tool-illus">
             <img src="/assets/images/tools/CellWellSegmentationConcept.png"
-                 alt="Cell Well Segmentation conceptual workflow">
+                 alt="Cell Well Segmentation conceptual workflow"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
           <div class="tool-meta">
@@ -168,7 +177,9 @@
 
           <div class="tool-illus">
             <img src="/assets/images/tools/QuPath_convert_concept.png"
-                 alt="QuPath GeoJSON Converter conceptual workflow">
+                 alt="QuPath GeoJSON Converter conceptual workflow"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
           <div class="tool-meta">
@@ -215,7 +226,24 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-  <script src="/assets/js/nav.js"></script>
-  <script src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/nav.js"></script>
+
+  <script>
+    window.addEventListener("load", function () {
+      const loadAnimation = function () {
+        const script = document.createElement("script");
+        script.src = "/assets/js/main.js";
+        script.defer = true;
+        document.body.appendChild(script);
+      };
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadAnimation);
+      } else {
+        setTimeout(loadAnimation, 500);
+      }
+    });
+  </script>
+
 </body>
 </html>
