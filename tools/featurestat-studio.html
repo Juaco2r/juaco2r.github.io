@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/png" href="/assets/images/icons/icon.png">
+  <title>FeatureStat Studio | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+  <style>
+    .tool-image-wrap {
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .tool-image {
+      width: min(100%, 760px);
+      max-height: 480px;
+      object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .tool-image.small-preview {
+      width: min(100%, 620px);
+      max-height: 390px;
+    }
+
+    .compact-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    .code-inline {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png"
+             alt="juaco2r logo"
+             class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+
+      <!-- MOBILE MENU BUTTON -->
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="nav-links" aria-label="Primary">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">FeatureStat Studio</h1>
+        <p class="lead">
+          Desktop GUI for grouped statistical analysis, publication-ready plots, histograms,
+          ROC biomarker evaluation, and multi-feature batch visualization.
+        </p>
+
+        <div class="tool-meta">
+          <span class="tag">Windows / Linux / macOS</span>
+          <span class="tag">Python / PySide6</span>
+          <span class="tag">Statistics</span>
+          <span class="tag">ROC analysis</span>
+          <span class="tag">Feature analysis</span>
+          <span class="tag">Data visualization</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="https://github.com/Juaco2r/FeatureStat_Studio"
+             target="_blank"
+             rel="noreferrer">
+             Repository
+          </a>
+
+          <a class="btn"
+             href="https://github.com/Juaco2r/FeatureStat_Studio/releases"
+             target="_blank"
+             rel="noreferrer">
+             Download
+          </a>
+
+          <a class="btn"
+             href="https://doi.org/10.5281/zenodo.20803088"
+             target="_blank"
+             rel="noreferrer">
+             DOI
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Workflow overview</h2>
+        <p class="small">
+          FeatureStat Studio is designed as a lightweight research tool for exploring grouped experimental,
+          biomedical, or image-derived feature datasets. It brings together data loading, group preparation,
+          pairwise statistics, figure generation, histogram inspection, ROC biomarker analysis, and
+          multi-feature batch outputs in a single desktop interface.
+        </p>
+        <div class="tool-image-wrap">
+          <img src="/assets/images/tools/FeatureStat_Studio_Concept.png"
+               class="tool-image"
+               alt="FeatureStat Studio workflow concept">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Input data</h2>
+          <ul class="small compact-list">
+            <li>Load CSV, TSV, TXT, Excel or pasted clipboard tables.</li>
+            <li>Use wide format when each column represents a group.</li>
+            <li>Use long format when one column defines groups and several columns define numeric features.</li>
+            <li>Prepare groups, rename display labels, and customize colors and marker styles.</li>
+            <li>Run validation checks before saving results.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Main features</h2>
+          <ul class="small compact-list">
+            <li>Pairwise statistical comparisons between groups.</li>
+            <li>Individual-value, bar, box, and violin plots.</li>
+            <li>Histogram visualization with automatic or manual binning.</li>
+            <li>Univariate ROC analysis for candidate biomarker evaluation.</li>
+            <li>Multi-feature batch preview and export workflow.</li>
+            <li>Project save/load for reproducible analysis sessions.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Recommended use</h2>
+          <ul class="small compact-list">
+            <li>Check that the selected data format matches your table structure.</li>
+            <li>Confirm group labels, colors and included groups before analysis.</li>
+            <li>Select statistical tests according to the biological and experimental design.</li>
+            <li>Use the validation report to review basic data and analysis settings.</li>
+            <li>For final reporting, verify representative statistics independently.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Statistical tests</h2>
+          <ul class="small compact-list">
+            <li>Unpaired t-test with equal SDs.</li>
+            <li>Welch's t-test.</li>
+            <li>Mann-Whitney test.</li>
+            <li>Kolmogorov-Smirnov test.</li>
+            <li>Paired t-test.</li>
+            <li>Ratio paired t-test.</li>
+            <li>Wilcoxon matched-pairs signed-rank test.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Multiple-comparison correction</h2>
+          <ul class="small compact-list">
+            <li>No correction.</li>
+            <li>Bonferroni correction.</li>
+            <li>Holm correction.</li>
+            <li>Benjamini-Hochberg FDR correction.</li>
+          </ul>
+          <p class="small">
+            Corrected p-values and significance symbols can be displayed in result tables and plot annotations.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Plot types</h2>
+          <ul class="small compact-list">
+            <li>Individual values with mean ± SD.</li>
+            <li>Individual values with mean ± SEM.</li>
+            <li>Box plots.</li>
+            <li>Violin plots.</li>
+            <li>Bar plots with SD or SEM.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>ROC biomarker analysis</h2>
+          <p class="small">
+            FeatureStat Studio includes univariate ROC analysis for comparing reference/control groups
+            against positive groups. The tool calculates ROC curves, AUC values, sensitivity, specificity,
+            Youden index, and candidate thresholds on the original feature scale.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Multi-feature workflow</h2>
+          <p class="small">
+            The multi-feature module applies the same group, statistical, ROC, histogram and plotting
+            settings across selected numeric feature columns. Users can preview each feature and then
+            save standardized outputs for the complete selected feature set.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Output layouts</h2>
+          <ul class="small compact-list">
+            <li>One 3-panel figure per feature.</li>
+            <li>Multiple features per visualization.</li>
+            <li>All-feature plots only.</li>
+            <li>All-feature histograms only.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Outputs</h2>
+          <p class="small">Depending on the selected analysis, the app can export:</p>
+          <ul class="small compact-list">
+            <li>Cleaned numeric values in CSV format.</li>
+            <li>Pairwise statistical results.</li>
+            <li>ROC threshold tables and ROC summaries.</li>
+            <li>Plot, ROC and histogram figures in image/vector formats.</li>
+            <li>Analysis parameters and project snapshots.</li>
+            <li>Validation reports and analysis logs.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Standalone builds</h2>
+          <ul class="small compact-list">
+            <li>Windows executable generated with PyInstaller.</li>
+            <li>Linux executable generated with PyInstaller.</li>
+            <li>macOS application bundle generated with PyInstaller.</li>
+            <li>GitHub Actions workflow for release builds.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Installation from source</h2>
+          <ol class="small compact-list">
+            <li>Clone the repository.</li>
+            <li>Create a Python virtual environment.</li>
+            <li>Install dependencies with <code>pip install -r requirements.txt</code>.</li>
+            <li>Run <code>python FeatureStat_Studio.py</code>.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Screenshot</h2>
+        <p class="small">
+          Main interface for loading data, preparing groups, running statistical tests,
+          generating plots, analyzing ROC curves, visualizing histograms and exporting multi-feature results.
+        </p>
+        <div class="tool-image-wrap">
+          <img src="/assets/images/tools/FeatureStat_Studio.png"
+               class="tool-image small-preview"
+               alt="FeatureStat Studio graphical interface">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Citation</h2>
+        <p class="small">
+          Rodríguez-Rojas J. <i>FeatureStat Studio: A desktop GUI for grouped statistics,
+          feature visualization, ROC biomarker analysis and multi-feature batch outputs</i>.
+          Version 1.0. Zenodo. 2026.
+          doi: <a href="https://doi.org/10.5281/zenodo.20803088" target="_blank" rel="noreferrer">10.5281/zenodo.20803088</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
+      </div>
+
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="/assets/js/nav.js"></script>
+</body>
+</html>

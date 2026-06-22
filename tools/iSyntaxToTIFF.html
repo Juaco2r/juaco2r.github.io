@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/png" href="/assets/images/icons/icon.png">
+  <title>iSyntaxToTIFF | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+  <style>
+    .tool-image-wrap {
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .tool-image {
+      width: min(100%, 760px);
+      max-height: 480px;
+      object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .tool-image.small-preview {
+      width: min(100%, 620px);
+      max-height: 390px;
+    }
+
+    .compact-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    .code-inline {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png"
+             alt="juaco2r logo"
+             class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+
+      <!-- MOBILE MENU BUTTON -->
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="nav-links" aria-label="Primary">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">iSyntaxToTIFF</h1>
+        <p class="lead">
+          Standalone converter for Philips <code>.isyntax</code> whole-slide images to pyramidal RGB OME-TIFF,
+          using OpenPhi and the Philips Pathology SDK.
+        </p>
+
+        <div class="tool-meta">
+          <span class="tag">Windows / Linux</span>
+          <span class="tag">Python / PyQt5</span>
+          <span class="tag">Philips iSyntax</span>
+          <span class="tag">OpenPhi</span>
+          <span class="tag">OME-TIFF</span>
+          <span class="tag">Digital pathology</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="https://github.com/Juaco2r/iSyntaxToTIFF"
+             target="_blank"
+             rel="noreferrer">
+             Repository
+          </a>
+
+          <a class="btn"
+             href="https://github.com/Juaco2r/iSyntaxToTIFF/releases"
+             target="_blank"
+             rel="noreferrer">
+             Download
+          </a>
+
+          <a class="btn"
+             href="https://doi.org/10.5281/zenodo.20798592"
+             target="_blank"
+             rel="noreferrer">
+             DOI
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Workflow overview</h2>
+        <p class="small">
+          iSyntaxToTIFF is designed as a focused helper application for laboratories that need to convert
+          Philips iSyntax whole-slide images into an open pyramidal OME-TIFF format for downstream viewing,
+          tiling, annotation or analysis in tools such as QuPath, Fiji or custom Python workflows.
+        </p>
+        <div class="tool-image-wrap">
+          <img src="/assets/images/tools/iSyntaxToTIFFConcept.png"
+               class="tool-image"
+               alt="iSyntaxToTIFF workflow concept">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Requirements</h2>
+          <ul class="small compact-list">
+            <li>iSyntaxToTIFF release package for Windows or Linux.</li>
+            <li>Philips Pathology SDK obtained directly from Philips and configured in the app.</li>
+            <li>Philips <code>.isyntax</code> whole-slide image files.</li>
+          </ul>
+          <hr class="sep"/>
+          <h2>SDK package</h2>
+          <p class="small">
+            As of June 2026, the Philips Pathology SDK can be obtained from the Philips portal by searching for
+            <span class="code-inline">PathologySDK</span> and downloading
+            <span class="code-inline">PathologySDK_2.0-L1_Packages</span>.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Main features</h2>
+          <ul class="small compact-list">
+            <li>Conversion from Philips <code>.isyntax</code> to pyramidal RGB <code>.ome.tif</code>.</li>
+            <li>SDK setup from a ZIP file or from an extracted SDK folder.</li>
+            <li>SDK import test from the GUI.</li>
+            <li>Thumbnail preview before conversion.</li>
+            <li>Optional output folder selection.</li>
+            <li>CSV conversion log for each batch run.</li>
+            <li>Windows and Linux build workflows.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Recommended use</h2>
+          <ul class="small compact-list">
+            <li>Select or prepare the Philips Pathology SDK once from the File menu.</li>
+            <li>Run <b>Test SDK</b> before conversion.</li>
+            <li>Use <b>Deflate lossless</b> compression for maximum practical fidelity.</li>
+            <li>Use <b>display</b> view for brightfield visual workflows such as H&amp;E and IHC.</li>
+            <li>If no output folder is selected, outputs are saved beside each input file.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>First-time workflow</h2>
+          <ol class="small compact-list">
+            <li>Download and extract the iSyntaxToTIFF release package for your operating system.</li>
+            <li>Run <code>iSyntaxToTIFF</code>.</li>
+            <li>Go to <b>File &gt; Select / Prepare SDK ZIP or folder</b>.</li>
+            <li>Select the Philips Pathology SDK ZIP or extracted SDK folder.</li>
+            <li>Run <b>File &gt; Test SDK</b>.</li>
+            <li>On Windows, if required, run <b>File &gt; Run SDK installer</b>.</li>
+            <li>Add <code>.isyntax</code> files and convert them to <code>.ome.tif</code>.</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h2>Outputs</h2>
+          <p class="small">For each converted file, the app creates:</p>
+          <ul class="small compact-list">
+            <li>A pyramidal RGB OME-TIFF file: <code>image_name.ome.tif</code>.</li>
+            <li>OME metadata including physical pixel size when exposed by OpenPhi.</li>
+            <li>Internal tiled pyramid levels suitable for whole-slide viewers.</li>
+            <li>A CSV conversion log documenting success, errors and output paths.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Compression</h2>
+          <ul class="small compact-list">
+            <li><b>Deflate lossless:</b> recommended default.</li>
+            <li><b>JPEG:</b> optional smaller lossy output with quality control.</li>
+            <li><b>Uncompressed:</b> optional but produces very large files.</li>
+          </ul>
+          <p class="small">
+            Deflate is lossless with respect to the rendered RGB image returned by OpenPhi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>OpenPhi-based reading</h2>
+          <p class="small">
+            The app uses OpenPhi to open Philips iSyntax files, read metadata, generate thumbnails,
+            and extract image regions. iSyntaxToTIFF then writes the rendered RGB data as pyramidal OME-TIFF.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Notes and limitations</h2>
+          <ul class="small compact-list">
+            <li>Designed mainly for brightfield visual workflows such as H&amp;E and IHC.</li>
+            <li>The output is a rendered RGB representation, not a raw scanner data export.</li>
+            <li>Raw multichannel fluorescence information or quantitative intensity preservation should be validated independently.</li>
+            <li>The Philips Pathology SDK is required separately and is subject to Philips' own license terms.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Supported SDK targets</h2>
+          <ul class="small compact-list">
+            <li>Windows: Philips Pathology SDK Windows Python 3.7 research package.</li>
+            <li>Linux: Philips Pathology SDK Ubuntu 20.04 Python 3.8 research package.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Screenshot</h2>
+        <p class="small">
+          Main interface for SDK setup, iSyntax file selection, thumbnail preview, conversion options and batch logging.
+        </p>
+        <div class="tool-image-wrap">
+          <img src="/assets/images/tools/iSyntaxToTIFF.png"
+               class="tool-image small-preview"
+               alt="iSyntaxToTIFF graphical interface">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Citation</h2>
+        <p class="small">
+          Rodríguez-Rojas J. <i>iSyntaxToTIFF: A standalone converter for Philips iSyntax whole-slide images
+          to pyramidal OME-TIFF</i>. Version 1.0. Zenodo. 2026.
+          doi: <a href="https://doi.org/10.5281/zenodo.20798592" target="_blank" rel="noreferrer">10.5281/zenodo.20798592</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
+      </div>
+
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="/assets/js/nav.js"></script>
+</body>
+</html>
