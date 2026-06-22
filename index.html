@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="icon" type="image/png" href="/assets/images/icons/icon.png">
-  <title>Tools | juaco2r</title>
+  <title>Juaco2r | Digital Pathology Tools</title>
   <link rel="stylesheet" href="/assets/css/main.css"/>
 </head>
 <body>
@@ -14,7 +14,8 @@
       <a class="brand" href="/">
         <img src="/assets/images/icons/icon.png"
              alt="juaco2r logo"
-             class="brand-icon"/>
+             class="brand-icon"
+             decoding="async"/>
         <span>Juaco2r</span>
       </a>
 
@@ -33,251 +34,208 @@
 
   <main class="container">
 
-    <section class="section">
-      <div class="card">
-        <h1 class="h1" style="font-size:2.2rem;">Tools</h1>
-        <p class="lead">
-          A collection of software tools designed to support scalable digital pathology workflows,
-          from whole-slide image processing to dataset preparation, image registration, segmentation,
-          annotation conversion and quantitative analysis.
-        </p>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card">
+          <h1 class="h1">Digital Pathology tools<br/>for research workflows</h1>
+          <p class="lead">
+            Advances in cancer research increasingly depend on quantitative histology and computational analysis.
+            From whole-slide imaging to spatial tissue modeling, robust digital workflows are essential.
+            I develop practical tools that bridge image processing and AI-driven infrastructure for
+            reproducible biomedical research.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="/tools/">Explore tools</a>
+            <a class="btn" href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+
+          <div class="badges">
+            <span class="badge">WSI / TIFF</span>
+            <span class="badge">Registration</span>
+            <span class="badge">Image processing</span>
+            <span class="badge">Segmentation</span>
+            <span class="badge">Statistics</span>
+            <span class="badge">AI-ready</span>
+          </div>
+        </div>
+
+        <div class="card" style="padding:0; overflow:hidden;">
+          <div style="padding:14px 16px; border-bottom:1px solid var(--line);">
+            <div style="font-weight:650;">Histology lung cancer animation</div>
+            <div class="small">Abstract animation inspired by lung cancer histology</div>
+          </div>
+          <div style="height:300px;">
+            <canvas id="histoCanvas" style="width:100%; height:100%; display:block;"></canvas>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section">
+      <h2>Featured tools</h2>
+
       <div class="grid">
 
-        <!-- HPA Downloader -->
+        <!-- HPA Image Downloader -->
         <div class="card tool-card">
-          <h2>HPA Image Downloader</h2>
+          <h3>HPA Image Downloader</h3>
           <p class="small">
-            Automated downloader for IHC cancer images from the Human Protein Atlas,
-            generating structured folders and CSV metadata summaries for dataset construction.
+            Automates downloading IHC cancer images from Human Protein Atlas and generates structured folders
+            + CSV metadata summaries.
           </p>
 
           <div class="tool-illus">
             <img src="/assets/images/tools/HPADownloader_concept.png"
-                alt="HPA Downloader conceptual illustration">
+                 alt="HPA Downloader conceptual illustration"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
-          <ul class="small">
-            <li>Batch IHC image retrieval</li>
-            <li>Structured dataset organization</li>
-            <li>CSV metadata export</li>
-          </ul>
-
           <div class="tool-meta">
-            <span class="tag">IHC</span>
-            <span class="tag">Dataset</span>
-            <span class="tag">CSV</span>
+            <span class="tag">IHC</span><span class="tag">Dataset</span><span class="tag">CSV</span>
           </div>
 
           <hr class="sep"/>
-
-          <div class="actions">
-            <a class="btn" href="/tools/hpa-downloader.html">Documentation</a>
-            <a class="btn" href="https://github.com/Juaco2r/HPADownloader" target="_blank" rel="noreferrer">Source</a>
-          </div>
+          <a class="btn" href="/tools/hpa-downloader.html">Open page</a>
         </div>
 
         <!-- TiffCropper -->
         <div class="card tool-card">
-          <h2>TiffCropper</h2>
+          <h3>TiffCropper</h3>
           <p class="small">
-            Standalone Windows application for extracting high-resolution ROIs from large TIFF microscopy images,
-            preserving calibration metadata and spatial integrity.
+            Standalone Windows app to extract high-resolution ROIs from large TIFF microscopy images
+            while preserving calibration metadata.
           </p>
 
           <div class="tool-illus">
             <img src="/assets/images/tools/WSICropper_concept.png"
-                alt="TiffCropper conceptual illustration">
+                 alt="TiffCropper conceptual illustration"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
-          <ul class="small">
-            <li>Handles large TIFF / WSI-like images</li>
-            <li>Metadata-safe cropping</li>
-            <li>Designed for reproducible ROI workflows</li>
-          </ul>
-
           <div class="tool-meta">
-            <span class="tag">Windows</span>
-            <span class="tag">TIFF</span>
-            <span class="tag">ROI</span>
+            <span class="tag">Windows</span><span class="tag">TIFF</span><span class="tag">ROI</span>
           </div>
 
           <hr class="sep"/>
-
-          <div class="actions">
-            <a class="btn" href="/tools/tiffcropper.html">Documentation</a>
-            <a class="btn" href="https://github.com/Juaco2r/TiffCropper" target="_blank" rel="noreferrer">Source</a>
-          </div>
+          <a class="btn" href="/tools/tiffcropper.html">Open page</a>
         </div>
-
 
         <!-- iSyntaxToTIFF -->
         <div class="card tool-card">
-          <h2>iSyntaxToTIFF</h2>
+          <h3>iSyntaxToTIFF</h3>
           <p class="small">
-            Standalone converter for Philips <code>.isyntax</code> whole-slide images to pyramidal RGB OME-TIFF,
+            Converts Philips <code>.isyntax</code> whole-slide images to pyramidal RGB OME-TIFF
             using OpenPhi and the Philips Pathology SDK.
           </p>
 
           <div class="tool-illus">
             <img src="/assets/images/tools/iSyntaxToTIFFConcept.png"
-                 alt="iSyntaxToTIFF conceptual illustration">
+                 alt="iSyntaxToTIFF conceptual illustration"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
-          <ul class="small">
-            <li>Philips <code>.isyntax</code> to pyramidal RGB <code>.ome.tif</code></li>
-            <li>SDK setup and SDK import test from the GUI</li>
-            <li>Batch conversion with CSV conversion log</li>
-          </ul>
-
           <div class="tool-meta">
-            <span class="tag">iSyntax</span>
-            <span class="tag">OME-TIFF</span>
-            <span class="tag">Converter</span>
+            <span class="tag">iSyntax</span><span class="tag">OME-TIFF</span><span class="tag">Converter</span>
           </div>
 
           <hr class="sep"/>
-
-          <div class="actions">
-            <a class="btn" href="/tools/iSyntaxToTIFF.html">Documentation</a>
-            <a class="btn" href="https://github.com/Juaco2r/iSyntaxToTIFF" target="_blank" rel="noreferrer">Source</a>
-          </div>
+          <a class="btn" href="/tools/iSyntaxToTIFF.html">Open page</a>
         </div>
 
         <!-- HistRegGUI -->
         <div class="card tool-card">
-          <h2>HistRegGUI</h2>
+          <h3>HistRegGUI</h3>
           <p class="small">
             Desktop GUI for histology image registration using DeeperHistReg presets
-            with CPU-only execution support.
+            (initial, rigid, nonrigid) with CPU-only execution.
           </p>
 
           <div class="tool-illus">
             <img src="/assets/images/tools/DeeperHistReg_concept.png"
-                alt="HistRegGUI / DeeperHistReg conceptual illustration">
+                 alt="HistRegGUI / DeeperHistReg conceptual illustration"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
-          <ul class="small">
-            <li>Multi-stage registration pipeline</li>
-            <li>CPU-friendly execution</li>
-            <li>Designed for section alignment &amp; 3D reconstruction workflows</li>
-          </ul>
-
           <div class="tool-meta">
-            <span class="tag">Registration</span>
-            <span class="tag">DeeperHistReg</span>
-            <span class="tag">GUI</span>
+            <span class="tag">Registration</span><span class="tag">DeeperHistReg</span><span class="tag">GUI</span>
           </div>
 
           <hr class="sep"/>
-
-          <div class="actions">
-            <a class="btn" href="/tools/histreggui.html">Documentation</a>
-            <a class="btn" href="https://github.com/Juaco2r/HistRegWSIGUI" target="_blank" rel="noreferrer">Source</a>
-          </div>
+          <a class="btn" href="/tools/histreggui.html">Open page</a>
         </div>
 
         <!-- Cell Well Segmentation -->
         <div class="card tool-card">
-          <h2>Cell Well Segmentation</h2>
+          <h3>Cell Well Segmentation</h3>
           <p class="small">
-            Desktop GUI for immunofluorescence cell segmentation, feature extraction,
-            Manders colocalization analysis, QuPath-compatible GeoJSON export and optional
-            DICE validation using ground-truth annotations.
+            Desktop GUI for immunofluorescence cell segmentation, feature extraction, Manders colocalization,
+            QuPath GeoJSON export and optional DICE validation with ground-truth annotations.
           </p>
 
           <div class="tool-illus">
             <img src="/assets/images/tools/CellWellSegmentationConcept.png"
-                alt="Cell Well Segmentation GUI screenshot">
+                 alt="Cell Well Segmentation conceptual workflow"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
-          <ul class="small">
-            <li>ROI-based parameter exploration</li>
-            <li>Instance mask, CSV, Manders and GeoJSON outputs</li>
-            <li>DICE/IoU validation against full-image GeoJSON annotations</li>
-          </ul>
-
           <div class="tool-meta">
-            <span class="tag">IF microscopy</span>
-            <span class="tag">Segmentation</span>
-            <span class="tag">Manders</span>
+            <span class="tag">IF microscopy</span><span class="tag">Segmentation</span><span class="tag">DICE</span>
           </div>
 
           <hr class="sep"/>
-
-          <div class="actions">
-            <a class="btn" href="/tools/cell-well-segmentation.html">Documentation</a>
-            <a class="btn" href="https://github.com/Juaco2r/cell-well-segmentation" target="_blank" rel="noreferrer">Source</a>
-          </div>
+          <a class="btn" href="/tools/cell-well-segmentation.html">Open page</a>
         </div>
 
         <!-- FeatureStat Studio -->
         <div class="card tool-card">
-          <h2>FeatureStat Studio</h2>
+          <h3>FeatureStat Studio</h3>
           <p class="small">
             Desktop GUI for grouped statistical analysis, publication-ready plots,
             histograms, ROC biomarker evaluation and multi-feature batch visualization.
           </p>
 
           <div class="tool-illus">
-            <img src="/assets/images/tools/FeatureStat_Studio_concept.png"
-                 alt="FeatureStat Studio conceptual illustration">
+            <img src="/assets/images/tools/FeatureStat_Studio_Concept.png"
+                 alt="FeatureStat Studio conceptual illustration"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
-          <ul class="small">
-            <li>Grouped statistics and publication-ready plots</li>
-            <li>Histogram and ROC biomarker analysis</li>
-            <li>Multi-feature batch preview and export</li>
-          </ul>
-
           <div class="tool-meta">
-            <span class="tag">Statistics</span>
-            <span class="tag">ROC</span>
-            <span class="tag">Features</span>
+            <span class="tag">Statistics</span><span class="tag">ROC</span><span class="tag">Features</span>
           </div>
 
           <hr class="sep"/>
-
-          <div class="actions">
-            <a class="btn" href="/tools/featurestat-studio.html">Documentation</a>
-            <a class="btn" href="https://github.com/Juaco2r/FeatureStat_Studio" target="_blank" rel="noreferrer">Source</a>
-          </div>
+          <a class="btn" href="/tools/featurestat-studio.html">Open page</a>
         </div>
 
         <!-- QuPath GeoJSON Converter -->
         <div class="card tool-card">
-          <h2>QuPath GeoJSON Converter</h2>
+          <h3>QuPath GeoJSON Converter</h3>
           <p class="small">
-            Desktop GUI for converting external GeoJSON annotations into QuPath-compatible annotations,
+            Converts external GeoJSON annotation files into QuPath-compatible annotations,
             detections and class-based objects.
           </p>
 
           <div class="tool-illus">
             <img src="/assets/images/tools/QuPath_convert_concept.png"
-                 alt="QuPath GeoJSON Converter conceptual workflow">
+                 alt="QuPath GeoJSON Converter conceptual workflow"
+                 loading="lazy"
+                 decoding="async">
           </div>
 
-          <ul class="small">
-            <li>GeoJSON classification conversion</li>
-            <li>Annotation, detection and object-count modes</li>
-            <li>Batch file and folder processing</li>
-          </ul>
-
           <div class="tool-meta">
-            <span class="tag">QuPath</span>
-            <span class="tag">GeoJSON</span>
-            <span class="tag">Annotations</span>
+            <span class="tag">QuPath</span><span class="tag">GeoJSON</span><span class="tag">Annotations</span>
           </div>
 
           <hr class="sep"/>
-
-          <div class="actions">
-            <a class="btn" href="/tools/qupath-geojson-converter.html">Documentation</a>
-            <a class="btn" href="https://github.com/Juaco2r/qupath-geojson-converter" target="_blank" rel="noreferrer">Source</a>
-          </div>
+          <a class="btn" href="/tools/qupath-geojson-converter.html">Open page</a>
         </div>
 
       </div>
@@ -285,15 +243,13 @@
 
     <section class="section">
       <div class="card">
-        <h2>Pipeline Development</h2>
-        <p class="small">
-          Beyond standalone tools, current development focuses on an end-to-end WSI processing
-          pipeline that transforms raw whole-slide images into structured, analysis-ready datasets.
-        </p>
-        <p class="small">
-          The system integrates automated tissue detection, artifact cleaning,
-          efficient patch extraction and storage, and segmentation modules
-          for quantitative tumor microenvironment characterization.
+        <h2>What I’m building next</h2>
+        <p class="lead" style="margin-bottom:0;">
+          Currently developing a robust end-to-end pipeline that transforms whole-slide images (WSI)
+          into structured, analysis-ready data. The workflow includes automated tissue detection,
+          artifact removal, efficient patch extraction and storage, and segmentation modules designed
+          for quantitative characterization of the tumor microenvironment (TME).
+          The goal is to enable scalable, reproducible analysis from raw histology to biological insight.
         </p>
       </div>
     </section>
@@ -305,11 +261,10 @@
       <div class="footer-left">
         © <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing
       </div>
+
       <div class="footer-right">
         <a href="/privacy/">Privacy</a>
-        <span class="footer-dot">·</span>
         <a href="/terms/">Terms</a>
-        <span class="footer-dot">·</span>
         <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </div>
@@ -318,6 +273,25 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-  <script src="/assets/js/nav.js"></script>
+
+  <script defer src="/assets/js/nav.js"></script>
+
+  <script>
+    window.addEventListener("load", function () {
+      const loadAnimation = function () {
+        const script = document.createElement("script");
+        script.src = "/assets/js/main.js";
+        script.defer = true;
+        document.body.appendChild(script);
+      };
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadAnimation);
+      } else {
+        setTimeout(loadAnimation, 500);
+      }
+    });
+  </script>
+
 </body>
 </html>
