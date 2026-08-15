@@ -80,36 +80,106 @@
           </div>
         </div>
 
-        <!-- TiffCropper -->
+        <!-- PathoImage Toolkit -->
         <div class="card tool-card">
-          <h2>TiffCropper</h2>
+          <h2>PathoImage Toolkit</h2>
           <p class="small">
-            Standalone Windows application for extracting high-resolution ROIs from large TIFF microscopy images,
-            preserving calibration metadata and spatial integrity.
+            Desktop utility for digital pathology and microscopy image workflows, including large-image
+            visualization, ROI cropping, tiling, reconstruction, downsampling, OME-TIFF handling,
+            Leica LIF conversion and annotation-aware tools.
           </p>
 
           <div class="tool-illus">
-            <img src="/assets/images/tools/WSICropper_concept.png"
-                alt="TiffCropper conceptual illustration">
+            <img src="/assets/images/tools/PathoImageToolkit_concept.png"
+                 alt="PathoImage Toolkit conceptual illustration">
           </div>
 
           <ul class="small">
-            <li>Handles large TIFF / WSI-like images</li>
-            <li>Metadata-safe cropping</li>
-            <li>Designed for reproducible ROI workflows</li>
+            <li>WSI preview, ROI cropping, tiling and reconstruction</li>
+            <li>OME-TIFF metadata and spatial calibration preservation</li>
+            <li>Multichannel, Leica LIF and GeoJSON-aware workflows</li>
           </ul>
 
           <div class="tool-meta">
-            <span class="tag">Windows</span>
-            <span class="tag">TIFF</span>
-            <span class="tag">ROI</span>
+            <span class="tag">WSI</span>
+            <span class="tag">Microscopy</span>
+            <span class="tag">OME-TIFF</span>
+            <span class="tag">LIF</span>
           </div>
 
           <hr class="sep"/>
 
           <div class="actions">
-            <a class="btn" href="/tools/tiffcropper.html">Documentation</a>
-            <a class="btn" href="https://github.com/Juaco2r/TiffCropper" target="_blank" rel="noreferrer">Source</a>
+            <a class="btn" href="/tools/pathoimage-toolkit.html">Documentation</a>
+            <a class="btn" href="https://github.com/Juaco2r/PathoImage-Toolkit" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </div>
+
+        <!-- HistoAnnotator -->
+        <div class="card tool-card">
+          <h2>HistoAnnotator</h2>
+          <p class="small">
+            Web and Android application for interactive histology and microscopy annotation with whole-slide
+            viewing, QuPath-compatible GeoJSON, local-first workflows and multichannel fluorescence visualization.
+          </p>
+
+          <div class="tool-illus">
+            <img src="/assets/images/tools/HistoAnnotator_concept.png"
+                 alt="HistoAnnotator conceptual illustration">
+          </div>
+
+          <ul class="small">
+            <li>Interactive WSI and microscopy annotation tools</li>
+            <li>QuPath-compatible GeoJSON import and export</li>
+            <li>Android tablet and offline-friendly workflows</li>
+          </ul>
+
+          <div class="tool-meta">
+            <span class="tag">Annotation</span>
+            <span class="tag">WSI</span>
+            <span class="tag">Android</span>
+            <span class="tag">Pre-release</span>
+          </div>
+
+          <hr class="sep"/>
+
+          <div class="actions">
+            <a class="btn" href="/tools/histoannotator.html">Documentation</a>
+            <a class="btn" href="https://github.com/Juaco2r/HistoAnnotator" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </div>
+
+        <!-- HistoAnalyzer -->
+        <div class="card tool-card">
+          <h2>HistoAnalyzer</h2>
+          <p class="small">
+            Cross-platform desktop application for reproducible H-DAB histology analysis, integrating tissue
+            classification, anthracosis detection, nuclei segmentation, compartment prediction and DAB quantification.
+          </p>
+
+          <div class="tool-illus">
+            <img src="/assets/images/tools/HistoAnalyzer_concept.png"
+                 alt="HistoAnalyzer conceptual illustration">
+          </div>
+
+          <ul class="small">
+            <li>H-DAB tissue and artifact-aware analysis pipeline</li>
+            <li>Tumor / Stroma / Other compartment workflows</li>
+            <li>GeoJSON, CSV, TIFF and QC image outputs</li>
+          </ul>
+
+          <div class="tool-meta">
+            <span class="tag">H-DAB</span>
+            <span class="tag">InstanSeg</span>
+            <span class="tag">Quantification</span>
+            <span class="tag">Pre-release</span>
+          </div>
+
+          <hr class="sep"/>
+
+          <div class="actions">
+            <a class="btn" href="/tools/histoanalyzer.html">Documentation</a>
+            <a class="btn" href="https://github.com/Juaco2r/HistoAnalyzer" target="_blank" rel="noreferrer">Source</a>
           </div>
         </div>
 
@@ -218,8 +288,8 @@
         <div class="card tool-card">
           <h2>FeatureStat Studio</h2>
           <p class="small">
-            Desktop GUI for grouped statistical analysis, publication-ready plots,
-            histograms, ROC biomarker evaluation and multi-feature batch visualization.
+            Desktop GUI for rapid grouped statistical exploration, quick data visualization,
+            histograms, ROC biomarker evaluation and multi-feature batch analysis.
           </p>
 
           <div class="tool-illus">
@@ -228,7 +298,7 @@
           </div>
 
           <ul class="small">
-            <li>Grouped statistics and publication-ready plots</li>
+            <li>Grouped statistics and rapid exploratory plots</li>
             <li>Histogram and ROC biomarker analysis</li>
             <li>Multi-feature batch preview and export</li>
           </ul>

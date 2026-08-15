@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/png" href="/assets/images/icons/icon.png">
+  <title>PathoImage Toolkit | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png" alt="juaco2r logo" class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      <nav id="primary-nav" class="nav-links" aria-label="Primary">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">PathoImage Toolkit</h1>
+        <p class="lead">Standalone desktop utility for digital pathology and microscopy image workflows, including whole-slide image preview, ROI cropping, tiling, reconstruction, downsampling, OME-TIFF handling, Leica LIF support and metadata-aware processing.</p>
+        <div class="tool-meta">
+          <span class="tag">Windows 10/11</span>
+          <span class="tag">Linux</span>
+          <span class="tag">WSI</span>
+          <span class="tag">OME-TIFF</span>
+          <span class="tag">LIF</span>
+          <span class="tag">GeoJSON</span>
+          <span class="tag">No Python required</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/Juaco2r/PathoImage-Toolkit" target="_blank" rel="noreferrer">Repository</a>
+          <a class="btn" href="https://github.com/Juaco2r/PathoImage-Toolkit/releases" target="_blank" rel="noreferrer">Download</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Overview</h2>
+          <p class="small">
+            PathoImage Toolkit is the evolution and rebranding of TiffCropper, expanding the original crop,
+            tile and merge functionality into a broader utility for digital pathology and microscopy image workflows.
+            It supports large-image visualization, ROI extraction, image splitting, reconstruction, metadata
+            preservation and format-aware processing in research settings.
+          </p>
+          <p class="small">
+            The application is suited to whole-slide images, microscopy datasets, OME-TIFF files and large
+            multichannel resources where preserving spatial calibration and image metadata is important for downstream analysis.
+          </p>
+          <hr class="sep"/>
+          <h2>Key features</h2>
+          <ul class="small">
+            <li>Whole-slide and large microscopy image visualization and preview</li>
+            <li>Coordinate-based ROI cropping</li>
+            <li>Fixed-size tiling and row/column image division</li>
+            <li>Tile reconstruction and image merging</li>
+            <li>Image downsampling</li>
+            <li>Multichannel image support and channel visualization</li>
+            <li>OME-TIFF metadata and spatial calibration preservation</li>
+            <li>Leica LIF image splitting and conversion</li>
+            <li>GeoJSON annotation visualization and editing</li>
+            <li>BigTIFF-compatible workflows for large outputs</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Quick start</h2>
+          <ol class="small">
+            <li>Open the application and select a supported image file.</li>
+            <li>Use the preview to inspect the image and target region.</li>
+            <li>Choose the required workflow: crop, tile, merge, downsample or another available utility.</li>
+            <li>Configure output settings and destination folder.</li>
+            <li>Run the process and review the generated outputs.</li>
+          </ol>
+          <hr class="sep"/>
+          <h2>Typical use cases</h2>
+          <ul class="small">
+            <li>Extract high-resolution ROIs from whole-slide images</li>
+            <li>Prepare tiles for machine learning or quantitative image analysis</li>
+            <li>Reconstruct images after tile-based processing</li>
+            <li>Preserve microscopy calibration metadata in derived outputs</li>
+            <li>Split, convert and organize large pathology or microscopy image files</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Project transition</h2>
+          <p class="small">
+            PathoImage Toolkit is the continuation of the project previously distributed as <b>TiffCropper</b>.
+            The new name reflects the expansion from a focused crop/tile utility into a broader pathology and microscopy toolkit.
+          </p>
+          <p class="small"><b>Previous release</b><br>
+            TiffCropper v1.2<br>
+            DOI: <a href="https://doi.org/10.5281/zenodo.20316535" target="_blank" rel="noreferrer">10.5281/zenodo.20316535</a>
+          </p>
+          <p class="small"><b>Current release</b><br>
+            PathoImage Toolkit v2.0<br>
+            DOI: <a href="https://doi.org/10.5281/zenodo.21956932" target="_blank" rel="noreferrer">10.5281/zenodo.21956932</a>
+          </p>
+          <hr class="sep"/>
+          <h2>Supported workflows</h2>
+          <ul class="small">
+            <li>TIFF / pyramidal TIFF / BigTIFF</li>
+            <li>OME-TIFF</li>
+            <li>Whole-slide formats through available readers</li>
+            <li>Leica LIF</li>
+            <li>JPEG and PNG</li>
+            <li>GeoJSON annotation workflows</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Screenshot</h2>
+        <p class="small">Visualization of the PathoImage Toolkit interface.</p>
+        <img src="/assets/images/tools/PathoImageToolkit.png"
+             style="width:95%; border-radius:14px; border:1px solid var(--line);"
+             alt="PathoImage Toolkit user interface"/>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">© <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing</div>
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <span class="footer-dot">·</span>
+        <a href="/terms/">Terms</a>
+        <span class="footer-dot">·</span>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/nav.js"></script>
+</body>
+</html>

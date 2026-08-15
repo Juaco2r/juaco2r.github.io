@@ -20,7 +20,9 @@ This site is hosted on **GitHub Pages** and showcases:
 - `downloads/` → PDFs (papers/posters) and other materials
 
 ## Featured tools (examples)
-- **TiffCropper**: Crop high-resolution ROIs from large TIFF microscopy images while preserving calibration metadata.
+- **PathoImage Toolkit**: Digital pathology and microscopy image utility for WSI preview, ROI cropping, tiling, reconstruction, downsampling, OME-TIFF, LIF and GeoJSON-aware workflows.
+- **HistoAnnotator** *(pre-release)*: Web and Android application for interactive WSI/microscopy annotation, QuPath-compatible GeoJSON and multichannel fluorescence visualization.
+- **HistoAnalyzer** *(pre-release)*: Cross-platform H-DAB analysis application with tissue/artifact classification, nuclei segmentation, compartment prediction and DAB quantification.
 - **HistRegGUI**: Desktop GUI for histology image registration using DeeperHistReg presets (CPU-only).
 - **HPA Image Downloader**: Download IHC cancer images from Human Protein Atlas and generate structured folders + CSV metadata.
 - **Cell Well Segmentation**: Classical CV pipeline for instance segmentation + feature extraction from multi-channel fluorescence TIFF images.

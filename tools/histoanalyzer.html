@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/png" href="/assets/images/icons/icon.png">
+  <title>HistoAnalyzer | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png" alt="juaco2r logo" class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      <nav id="primary-nav" class="nav-links" aria-label="Primary">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">HistoAnalyzer</h1>
+        <p class="lead">Cross-platform desktop application for reproducible H-DAB histology analysis, integrating pixel classifiers, nuclei segmentation, compartment prediction and compartment-specific DAB quantification in one batch-processing workflow.</p>
+        <div class="tool-meta">
+          <span class="tag">Windows</span>
+          <span class="tag">macOS</span>
+          <span class="tag">Linux</span>
+          <span class="tag">H-DAB</span>
+          <span class="tag">InstanSeg</span>
+          <span class="tag">GeoJSON</span>
+          <span class="tag">Pre-release</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/Juaco2r/HistoAnalyzer" target="_blank" rel="noreferrer">Repository</a>
+          <a class="btn" href="https://github.com/Juaco2r/HistoAnalyzer/releases" target="_blank" rel="noreferrer">Download</a>
+        </div>
+      </div>
+        <div class="card" style="margin-top:1rem;">
+          <p class="small" style="margin:0;"><b>Pre-release software:</b> This project is intended for research, development and testing. It is not clinically validated medical software.</p>
+        </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Overview</h2>
+          <p class="small">
+            HistoAnalyzer is a cross-platform desktop application for reproducible H-DAB histology analysis.
+            It combines QuPath-exported pixel classifiers, InstanSeg nuclei segmentation, regional machine learning
+            and compartment-specific DAB quantification in a unified batch-processing interface.
+          </p>
+          <hr class="sep"/>
+          <h2>Main workflow</h2>
+          <ol class="small">
+            <li>Tissue/background classification from a QuPath ANN JSON.</li>
+            <li>Anthracosis/ink detection from a QuPath RTrees JSON.</li>
+            <li>Dilation and subtraction to obtain CleanTissue.</li>
+            <li>InstanSeg brightfield nuclei segmentation.</li>
+            <li>H-channel nuclear, neighborhood and regional feature extraction.</li>
+            <li>Random Forest classification of Tumor, Stroma and Other.</li>
+            <li>DAB quantification independently inside Tumor and Stroma.</li>
+            <li>GeoJSON, CSV, mask TIFF and quality-control PNG export.</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h2>Desktop features</h2>
+          <ul class="small">
+            <li>Single-image and batch processing</li>
+            <li>File, folder and drag-and-drop input</li>
+            <li>Baseline, training, prediction and train-then-predict workflows</li>
+            <li>Live logs, progress, cancellation and per-image status</li>
+            <li>Stage, nuclei, compartment and DAB preview tabs</li>
+            <li>Persistent classifier and output settings</li>
+            <li>InstanSeg with watershed fallback</li>
+            <li>CPU, CUDA and Apple MPS execution options</li>
+            <li>TIFF / OME-TIFF and common OpenSlide formats</li>
+          </ul>
+          <hr class="sep"/>
+          <h2>Typical use cases</h2>
+          <ul class="small">
+            <li>Reproducible H-DAB tissue quantification</li>
+            <li>Tumor/stroma compartment analysis</li>
+            <li>Nuclei segmentation-assisted histology analysis</li>
+            <li>Batch export for downstream quantitative workflows</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Outputs</h2>
+          <ul class="small">
+            <li>Tissue and anthracosis GeoJSON masks</li>
+            <li>Positive and negative DAB GeoJSON outputs</li>
+            <li>Tumor, Stroma and Other compartment GeoJSONs</li>
+            <li>Compartment-specific positive / negative overlays</li>
+            <li>CSV measurement tables</li>
+            <li>Mask TIFF and QC montage / overlay PNG files</li>
+          </ul>
+          <hr class="sep"/>
+          <h2>Scientific use note</h2>
+          <p class="small">
+            HistoAnalyzer is research-use software. Tissue masks, artifact detection, nuclei segmentation,
+            compartment predictions, DAB thresholds and final measurements should be validated on representative
+            data before quantitative interpretation or scientific reporting.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Screenshot</h2>
+        <p class="small">Visualization of the HistoAnalyzer interface.</p>
+        <img src="/assets/images/tools/HistoAnalyzer.png"
+             style="width:95%; border-radius:14px; border:1px solid var(--line);"
+             alt="HistoAnalyzer user interface"/>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">© <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing</div>
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <span class="footer-dot">·</span>
+        <a href="/terms/">Terms</a>
+        <span class="footer-dot">·</span>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/nav.js"></script>
+</body>
+</html>

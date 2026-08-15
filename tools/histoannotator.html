@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/png" href="/assets/images/icons/icon.png">
+  <title>HistoAnnotator | juaco2r</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/icons/icon.png" alt="juaco2r logo" class="brand-icon"/>
+        <span>Juaco2r</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      <nav id="primary-nav" class="nav-links" aria-label="Primary">
+        <a href="/tools/">Tools</a>
+        <a href="/research/">Research</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="card">
+        <h1 class="h1" style="font-size:2.2rem;">HistoAnnotator</h1>
+        <p class="lead">Web and Android application for interactive annotation of histology and microscopy images, supporting whole-slide viewing, QuPath-compatible GeoJSON, local-first workflows and multichannel fluorescence visualization.</p>
+        <div class="tool-meta">
+          <span class="tag">Web</span>
+          <span class="tag">Android</span>
+          <span class="tag">WSI</span>
+          <span class="tag">GeoJSON</span>
+          <span class="tag">Fluorescence</span>
+          <span class="tag">Annotation</span>
+          <span class="tag">Pre-release</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/Juaco2r/HistoAnnotator" target="_blank" rel="noreferrer">Repository</a>
+          <a class="btn" href="https://github.com/Juaco2r/HistoAnnotator/releases" target="_blank" rel="noreferrer">Download</a>
+        </div>
+      </div>
+        <div class="card" style="margin-top:1rem;">
+          <p class="small" style="margin:0;"><b>Pre-release software:</b> This project is intended for research, development and testing. It is not clinically validated medical software.</p>
+        </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Overview</h2>
+          <p class="small">
+            HistoAnnotator is a web and Android application for interactive annotation of histology and microscopy images.
+            It is designed for research workflows involving whole-slide images, standard raster images, scientific
+            multichannel fluorescence TIFF files and QuPath-compatible GeoJSON annotations.
+          </p>
+          <p class="small">
+            The application combines browser-based and Android tablet use with local-first annotation storage,
+            allowing downloaded images and annotations to remain available when a continuous server connection is not present.
+          </p>
+          <hr class="sep"/>
+          <h2>Key features</h2>
+          <ul class="small">
+            <li>OpenSlide-based whole-slide viewing with Deep Zoom / OpenSeadragon navigation</li>
+            <li>Freehand, Brush, Polygon, Rectangle, Circle and Wand tools</li>
+            <li>Multi-object selection with merge, intersection and subtraction operations</li>
+            <li>Annotation classes, colors and undo / redo</li>
+            <li>QuPath-compatible GeoJSON import and export</li>
+            <li>GeoJSON sharing from Android</li>
+            <li>Local-first annotation storage and offline-friendly image viewing</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Multichannel fluorescence</h2>
+          <p class="small">
+            Supported scientific fluorescence TIFF files can be visualized without flattening the source data to RGB first.
+            Display controls are non-destructive and do not alter raw scientific pixel values.
+          </p>
+          <ul class="small">
+            <li>Independent channel visibility</li>
+            <li>False-color assignment</li>
+            <li>Automatic display-range estimation</li>
+            <li>Per-channel minimum and maximum display values</li>
+            <li>Gamma and brightness controls</li>
+            <li>Persistent display settings per image</li>
+          </ul>
+          <hr class="sep"/>
+          <h2>Typical use cases</h2>
+          <ul class="small">
+            <li>Manual annotation of histology and microscopy images</li>
+            <li>Review and editing of QuPath-compatible annotations</li>
+            <li>Tablet-based annotation workflows</li>
+            <li>Exploration of multichannel fluorescence images</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Project status</h2>
+          <p class="small">
+            HistoAnnotator is currently distributed as pre-release research software for development and testing.
+            It is not clinically validated medical software and should be deployed according to institutional
+            data-governance, security and ethics requirements.
+          </p>
+          <hr class="sep"/>
+          <h2>Current scope</h2>
+          <ul class="small">
+            <li>Web application and Android tablet interface</li>
+            <li>Whole-slide and raster image annotation</li>
+            <li>QuPath interoperability through GeoJSON</li>
+            <li>Offline-friendly cached image and annotation workflows</li>
+            <li>Research-oriented multichannel fluorescence visualization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Screenshot</h2>
+        <p class="small">Visualization of the HistoAnnotator interface.</p>
+        <img src="/assets/images/tools/HistoAnnotator.png"
+             style="width:95%; border-radius:14px; border:1px solid var(--line);"
+             alt="HistoAnnotator user interface"/>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">© <span id="year"></span> <b>juaco2r</b> — Digital Pathology &amp; Medical Image Computing</div>
+      <div class="footer-right">
+        <a href="/privacy/">Privacy</a>
+        <span class="footer-dot">·</span>
+        <a href="/terms/">Terms</a>
+        <span class="footer-dot">·</span>
+        <a href="https://github.com/Juaco2r" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/nav.js"></script>
+</body>
+</html>
