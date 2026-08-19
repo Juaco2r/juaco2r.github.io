@@ -28,23 +28,25 @@
     <section class="section">
       <div class="card">
         <h1 class="h1" style="font-size:2.2rem;">HistoAnnotator</h1>
-        <p class="lead">Web and Android application for interactive annotation of histology and microscopy images, supporting whole-slide viewing, QuPath-compatible GeoJSON, local-first workflows and multichannel fluorescence visualization.</p>
+        <p class="lead">Cross-platform application for interactive annotation of histology and microscopy images, available for Web, Windows, Linux, macOS and Android, with whole-slide viewing, QuPath-compatible GeoJSON, local and server-based workflows, QR pairing and multichannel fluorescence visualization.</p>
         <div class="tool-meta">
           <span class="tag">Web</span>
+          <span class="tag">Desktop</span>
           <span class="tag">Android</span>
+          <span class="tag">Windows</span>
+          <span class="tag">Linux</span>
+          <span class="tag">macOS</span>
           <span class="tag">WSI</span>
           <span class="tag">GeoJSON</span>
-          <span class="tag">Fluorescence</span>
-          <span class="tag">Annotation</span>
-          <span class="tag">Pre-release</span>
+          <span class="tag">v1.2.0</span>
         </div>
         <div class="actions">
           <a class="btn btn-primary" href="https://github.com/Juaco2r/HistoAnnotator" target="_blank" rel="noreferrer">Repository</a>
-          <a class="btn" href="https://github.com/Juaco2r/HistoAnnotator/releases" target="_blank" rel="noreferrer">Download</a>
+          <a class="btn" href="https://github.com/Juaco2r/HistoAnnotator/releases/tag/v1.2.0" target="_blank" rel="noreferrer">Download v1.2.0</a>
         </div>
       </div>
         <div class="card" style="margin-top:1rem;">
-          <p class="small" style="margin:0;"><b>Pre-release software:</b> This project is intended for research, development and testing. It is not clinically validated medical software.</p>
+          <p class="small" style="margin:0;"><b>Research software:</b> HistoAnnotator v1.2.0 is a public research-software release. It is intended for research and testing and is not clinically validated medical software.</p>
         </div>
     </section>
 
@@ -53,23 +55,26 @@
         <div class="card">
           <h2>Overview</h2>
           <p class="small">
-            HistoAnnotator is a web and Android application for interactive annotation of histology and microscopy images.
-            It is designed for research workflows involving whole-slide images, standard raster images, scientific
-            multichannel fluorescence TIFF files and QuPath-compatible GeoJSON annotations.
+            HistoAnnotator is a cross-platform application for interactive annotation of histology and microscopy images.
+            It supports browser-based use, standalone Desktop applications for Windows, Linux and macOS, and an Android
+            tablet application for local or server-connected annotation workflows.
           </p>
           <p class="small">
-            The application combines browser-based and Android tablet use with local-first annotation storage,
-            allowing downloaded images and annotations to remain available when a continuous server connection is not present.
+            Desktop can run as an independent local HistoAnnotator server and display a QR code for quick Android pairing.
+            Android can also work with supported local TIFF/images, allowing annotation workflows to continue without a
+            continuous connection to a remote server.
           </p>
           <hr class="sep"/>
           <h2>Key features</h2>
           <ul class="small">
+            <li>Standalone Desktop builds for Windows, Linux and macOS</li>
+            <li>Android app with local image support and QR-based Desktop pairing</li>
             <li>OpenSlide-based whole-slide viewing with Deep Zoom / OpenSeadragon navigation</li>
             <li>Freehand, Brush, Polygon, Rectangle, Circle and Wand tools</li>
             <li>Multi-object selection with merge, intersection and subtraction operations</li>
             <li>Annotation classes, colors and undo / redo</li>
-            <li>QuPath-compatible GeoJSON import and export</li>
-            <li>GeoJSON sharing from Android</li>
+            <li>QuPath-compatible GeoJSON import, export and Android sharing</li>
+            <li>Large generic TIFF preparation using bundled pyvips / libvips in Desktop builds</li>
             <li>Local-first annotation storage and offline-friendly image viewing</li>
           </ul>
         </div>
@@ -93,7 +98,8 @@
           <ul class="small">
             <li>Manual annotation of histology and microscopy images</li>
             <li>Review and editing of QuPath-compatible annotations</li>
-            <li>Tablet-based annotation workflows</li>
+            <li>Tablet-based annotation workflows with local files or Desktop server pairing</li>
+            <li>Standalone local annotation on Windows, Linux and macOS</li>
             <li>Exploration of multichannel fluorescence images</li>
           </ul>
         </div>
@@ -101,19 +107,41 @@
         <div class="card">
           <h2>Project status</h2>
           <p class="small">
-            HistoAnnotator is currently distributed as pre-release research software for development and testing.
-            It is not clinically validated medical software and should be deployed according to institutional
-            data-governance, security and ethics requirements.
+            HistoAnnotator v1.2.0 is distributed as public research software. Windows, Linux and Android builds
+            have been manually tested, while macOS Intel and Apple Silicon builds are generated and packaged
+            self-tested through GitHub Actions. It is not clinically validated medical software and should be
+            deployed according to institutional data-governance, security and ethics requirements.
           </p>
           <hr class="sep"/>
           <h2>Current scope</h2>
           <ul class="small">
-            <li>Web application and Android tablet interface</li>
-            <li>Whole-slide and raster image annotation</li>
+            <li>Web, Windows, Linux, macOS and Android applications</li>
+            <li>Whole-slide, raster and supported scientific TIFF annotation</li>
+            <li>Independent Desktop server sessions with QR-based Android pairing</li>
             <li>QuPath interoperability through GeoJSON</li>
-            <li>Offline-friendly cached image and annotation workflows</li>
+            <li>Offline-friendly local image and annotation workflows</li>
             <li>Research-oriented multichannel fluorescence visualization</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="card">
+        <h2>Downloads</h2>
+        <p class="small">
+          HistoAnnotator v1.2.0 is distributed through GitHub Releases for the main supported platforms.
+          Desktop archives should be extracted completely before launching the application.
+        </p>
+        <ul class="small">
+          <li>Windows x64 — portable ZIP</li>
+          <li>Linux x64 — portable TAR.GZ</li>
+          <li>macOS — Apple Silicon and Intel builds</li>
+          <li>Android — APK for research and testing</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/Juaco2r/HistoAnnotator/releases/tag/v1.2.0" target="_blank" rel="noreferrer">Get HistoAnnotator v1.2.0</a>
         </div>
       </div>
     </section>
